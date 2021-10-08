@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="500.0" fitWidth="650.0" pickOnBounds="true">
          <image>
-            <Image url="file:/E:/eclipse-workspace/EscapeTheIslandGame/src/assets/img/menu_bg.jpg" />
+            <Image url="@../assets/img/menu_bg.jpg" />
          </image>
       </ImageView>
       <VBox alignment="BOTTOM_CENTER" layoutX="44.0" layoutY="41.0" prefHeight="419.0" prefWidth="575.0">
