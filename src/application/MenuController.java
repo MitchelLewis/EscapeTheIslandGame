@@ -1,6 +1,5 @@
 package application;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
@@ -37,4 +36,17 @@ public class MenuController {
 		}
 		
 	}
+	
+	public void handleOptions(MouseEvent event){
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("Options.fxml"));
+			Main.primaryStage.setScene(new Scene(root, 650, 500));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		
+		}
+	}
+	
 }
