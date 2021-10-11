@@ -32,7 +32,6 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			mp.play();
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
