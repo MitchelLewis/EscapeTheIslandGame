@@ -4,7 +4,7 @@ import javafx.scene.control.TextArea;
 
 public class HelpCommand implements Command {
 	@Override
-	public void handleCommand(TextArea gameOutput) {
+	public void handleCommand(TextArea gameOutput, String input) {
 		gameOutput.setText("Commands:\r\n"
 				+ "\r\n"
 				+ "help - shows the help menu\r\n"

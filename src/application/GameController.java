@@ -1,19 +1,37 @@
 package application;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import application.commands.CommandController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class GameController {
 	@FXML
 	TextArea outputText;
 	@FXML
 	TextField inputText;
-	private final CommandController commandController = new CommandController();
+	private LevelController levelController;
+	private CommandController commandController;
 	
 	@FXML
 	public void initialize() {
+		try {
+			levelController = new LevelController();
+			commandController = new CommandController(levelController);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			Stage stage = (Stage) outputText.getScene().getWindow();
+			stage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			Stage stage = (Stage) outputText.getScene().getWindow();
+			stage.close();
+		}
+		
 		outputText.setText("Welcome to Escape The Island.\r\n"
 				+ "\r\n"
 				+ "Before you get started on this magical adventure we need to make sure you know how to play.\r\n"

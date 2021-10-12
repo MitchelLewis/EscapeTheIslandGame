@@ -31,8 +31,9 @@ public class MenuController {
 			root = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			Main.primaryStage.setScene(new Scene(root, 650, 500));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			Stage stage = (Stage) exitBtn.getScene().getWindow();
+			stage.close();
 		}
 		
 	}
@@ -43,9 +44,9 @@ public class MenuController {
 			root = FXMLLoader.load(getClass().getResource("Options.fxml"));
 			Main.primaryStage.setScene(new Scene(root, 650, 500));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		
+			Stage stage = (Stage) exitBtn.getScene().getWindow();
+			stage.close();		
 		}
 	}
 	

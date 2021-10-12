@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 public class QuitCommand implements Command {
 
 	@Override
-	public void handleCommand(TextArea gameOutput) {
+	public void handleCommand(TextArea gameOutput, String input) {
 		Stage stage = (Stage) gameOutput.getScene().getWindow();
 		stage.close();
 	}
