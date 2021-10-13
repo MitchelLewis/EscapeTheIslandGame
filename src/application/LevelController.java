@@ -16,13 +16,12 @@ public class LevelController {
 	private Riddle[][] riddles;
 	private Integer level;
 	private int riddleNumber;
-	private Deque<Riddle> possibleRiddles;
 	
 	public LevelController() throws FileNotFoundException, IOException {
 		this.level = null;
 		this.riddleNumber = 0;
 		this.riddles = new Riddle[2][2];
-		this.possibleRiddles = new ArrayDeque<>();
+		Deque<Riddle> possibleRiddles = new ArrayDeque<>();
 		File seedFile = new File(System.getProperty("user.dir") + "/src/assets/text/riddles_and_stories.csv");
 		String line;
 		try(
@@ -57,7 +56,7 @@ public class LevelController {
 		if(level == null) {
 			level = 0;
 		}
-		if(riddleNumber < 2) {
+		if(riddleNumber < 1) {
 			riddleNumber++;
 		} else {
 			riddleNumber = 0;

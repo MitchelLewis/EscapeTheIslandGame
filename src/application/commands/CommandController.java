@@ -16,6 +16,7 @@ public class CommandController {
 		COMMANDS.put("quit", new QuitCommand());
 		COMMANDS.put("next", new NextCommand(levelController));
 		COMMANDS.put("answer", new AnswerCommand(levelController));
+		COMMANDS.put("hint", new HintCommand(levelController));
 	}
 	
 	public void handleCommand(String command, TextArea gameOutput) {
