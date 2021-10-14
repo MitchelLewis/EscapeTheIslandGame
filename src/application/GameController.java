@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import application.commands.CommandController;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,6 +15,10 @@ public class GameController {
 	TextArea outputText;
 	@FXML
 	TextField inputText;
+	@FXML
+	Label heartAmount;
+	@FXML
+	Label hintAmount;
 	private LevelController levelController;
 	private CommandController commandController;
 	
@@ -55,6 +60,7 @@ public class GameController {
 				+ "Good luck.\r\n"
 				+ "\r\n"
 				+ "Type 'next' to continue.");
+		
 	}
 	
 	public void handleCommandEntry() {

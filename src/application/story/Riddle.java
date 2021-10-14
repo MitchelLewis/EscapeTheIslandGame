@@ -6,6 +6,7 @@ public class Riddle {
 	private String answer;
 	private String hint;
 	private Boolean hasAnsweredCorrectly;
+	private Boolean usedHint;
 	
 	public Riddle(String story, String riddle, String answer, String hint) {
 		this.storyElement = story;
@@ -13,6 +14,7 @@ public class Riddle {
 		this.answer = answer;
 		this.hint = hint;
 		this.hasAnsweredCorrectly = false;
+		this.setUsedHint(false);
 	}
 
 	public String getStoryElement() {
@@ -37,6 +39,14 @@ public class Riddle {
 
 	public void setHasAnsweredCorrectly(Boolean hasAnsweredCorrectly) {
 		this.hasAnsweredCorrectly = hasAnsweredCorrectly;
+	}
+
+	public Boolean getUsedHint() {
+		return usedHint;
+	}
+
+	public void setUsedHint(Boolean usedHint) {
+		this.usedHint = usedHint;
 	}
 	
 }
