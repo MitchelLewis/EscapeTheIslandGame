@@ -24,20 +24,18 @@ public class LevelController {
 		Deque<Riddle> possibleRiddles = new ArrayDeque<>();
 		File seedFile = new File(System.getProperty("user.dir") + "/src/assets/text/riddles_and_stories.csv");
 		String line;
-		try(
-				FileReader fr = new FileReader(seedFile); 
-				BufferedReader br = new BufferedReader(fr)) {
+		try(FileReader fr = new FileReader(seedFile); 
+			BufferedReader br = new BufferedReader(fr)) {
 			while((line = br.readLine()) != null) {
 				String[] lineAsArray = line.split(",");
-				possibleRiddles.push(new Riddle(lineAsArray[0], lineAsArray[1], lineAsArray[2], lineAsArray[3]));
+				possibleRiddles.addLast(new Riddle(lineAsArray[0], lineAsArray[1], lineAsArray[2], lineAsArray[3]));
 			}
 			for(int lvl = 0; lvl < riddles.length; lvl++) {
 				for(int riddle = 0; riddle < riddles[0].length; riddle++) {
-					riddles[lvl][riddle] = possibleRiddles.pop();
+					riddles[lvl][riddle] = possibleRiddles.removeFirst();
 				}
 			}
 		}
-
 	}
 	
 	public Integer getLevel() {
@@ -55,12 +53,13 @@ public class LevelController {
 	public void nextRiddle() {
 		if(level == null) {
 			level = 0;
-		}
-		if(riddleNumber < 1) {
-			riddleNumber++;
 		} else {
-			riddleNumber = 0;
-			level++;
+			if(riddleNumber < 1) {
+				riddleNumber++;
+			} else {
+				riddleNumber = 0;
+				level++;
+			}
 		}
 	}
 }

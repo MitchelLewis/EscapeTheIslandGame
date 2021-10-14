@@ -59,7 +59,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <Label fx:id="scoreValue" layoutX="104.0" layoutY="455.0" textFill="WHITE">
+      <Label fx:id="scoreValue" layoutX="104.0" layoutY="455.0" text="0" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>

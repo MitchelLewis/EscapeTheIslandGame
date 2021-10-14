@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+   <children>
+      <GridPane prefHeight="500.0" prefWidth="650.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="163.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="326.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="158.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="373.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="353.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="168.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/game_over.png" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="25.0" prefWidth="220.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Try again" />
+                        <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="25.0" prefWidth="224.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Exit" />
+                     </children>
+                  </HBox>
+               </children>
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
