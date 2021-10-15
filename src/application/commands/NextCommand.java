@@ -5,6 +5,7 @@ import application.story.Riddle;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 
 public class NextCommand implements Command {
 	private LevelController levelController;
@@ -29,7 +30,8 @@ public class NextCommand implements Command {
 	}
 	
 	private void showRiddle(TextArea gameOutput) {
-		levelController.nextRiddle();
+		Label healthLabel = (Label) gameOutput.getScene().lookup("#heartAmount");
+		levelController.nextRiddle(healthLabel);
 		Riddle nextRiddle = levelController.getRiddle();
 		StringBuilder sb = new StringBuilder();
 		sb.append(nextRiddle.getStoryElement());

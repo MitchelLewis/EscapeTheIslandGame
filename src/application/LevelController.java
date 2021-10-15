@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import application.story.Riddle;
+import javafx.scene.control.Label;
 
 public class LevelController {
 	private Riddle[][] riddles;
@@ -50,7 +51,7 @@ public class LevelController {
 		return this.riddles[level][riddleNumber];
 	}
 	
-	public void nextRiddle() {
+	public void nextRiddle(Label healthLabel) {
 		if(level == null) {
 			level = 0;
 		} else {
@@ -59,6 +60,8 @@ public class LevelController {
 			} else {
 				riddleNumber = 0;
 				level++;
+				int currentHealth = Integer.valueOf(healthLabel.getText());
+				healthLabel.setText(String.valueOf(currentHealth + 1));
 			}
 		}
 	}

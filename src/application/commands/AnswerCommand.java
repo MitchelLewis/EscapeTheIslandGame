@@ -55,7 +55,6 @@ public class AnswerCommand implements Command {
 						root = FXMLLoader.load(getClass().getResource("../GameOver.fxml"));
 						Main.primaryStage.setScene(new Scene(root, 650, 500));
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				} else {
