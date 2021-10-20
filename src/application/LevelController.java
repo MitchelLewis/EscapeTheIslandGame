@@ -28,7 +28,7 @@ public class LevelController {
 		try(FileReader fr = new FileReader(seedFile); 
 			BufferedReader br = new BufferedReader(fr)) {
 			while((line = br.readLine()) != null) {
-				String[] lineAsArray = line.split(",");
+				String[] lineAsArray = line.split("@");
 				possibleRiddles.addLast(new Riddle(lineAsArray[0], lineAsArray[1], lineAsArray[2], lineAsArray[3]));
 			}
 			for(int lvl = 0; lvl < riddles.length; lvl++) {
@@ -55,7 +55,10 @@ public class LevelController {
 		if(level == null) {
 			level = 0;
 		} else {
-			if(riddleNumber < 1) {
+			if(level + 1 == 2 && riddleNumber + 1 == 2) {
+				Label scoreLabel = (Label) healthLabel.getScene().lookup("#scoreValue");
+				new GameWinController().show(scoreLabel.getText());
+			} else if(riddleNumber < 1) {
 				riddleNumber++;
 			} else {
 				riddleNumber = 0;
