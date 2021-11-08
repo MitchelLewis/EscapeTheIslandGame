@@ -7,7 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import application.story.Riddle;
@@ -56,12 +58,14 @@ public class LevelController {
 			level = 0;
 		} else {
 			if(level + 1 == 2 && riddleNumber + 1 == 2) {
+				AchievementController.setLevelComplete(level);
 				Label scoreLabel = (Label) healthLabel.getScene().lookup("#scoreValue");
 				new GameWinController().show(scoreLabel.getText());
 			} else if(riddleNumber < 1) {
 				riddleNumber++;
 			} else {
 				riddleNumber = 0;
+				AchievementController.setLevelComplete(level);
 				level++;
 				int currentHealth = Integer.valueOf(healthLabel.getText());
 				healthLabel.setText(String.valueOf(currentHealth + 1));

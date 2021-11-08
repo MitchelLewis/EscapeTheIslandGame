@@ -1,5 +1,6 @@
 package application.commands;
 
+import application.AchievementController;
 import application.LevelController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -30,6 +31,7 @@ public class HintCommand implements Command {
 			//check the value is not 0 else alert they have not hints left
 			if(hintValue != 0)
 			{
+				AchievementController.noHintsUsed = false;
 				gameOutput.appendText("\n" + hintText);
 				//update hint label
 				hintAmountLbl.setText(Integer.toString(hintValue - 1));

@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -37,7 +39,33 @@ public class GameWinController {
 			root = FXMLLoader.load(getClass().getResource("GameWin.fxml"));
 			Main.primaryStage.setScene(new Scene(root, 650, 500));
 			Label finalScoreLabel = (Label) root.lookup("#finalScoreLabel");
+			ImageView level1Achievement = (ImageView) root.lookup("#level1Achievement");
+			ImageView level2Achievement = (ImageView) root.lookup("#level2Achievement");
+			ImageView level3Achievement = (ImageView) root.lookup("#level3Achievement");
+			ImageView level4Achievement = (ImageView) root.lookup("#level4Achievement");
+			ImageView noRiddlesWrongAchievement = (ImageView) root.lookup("#noRiddlesWrong");
+			ImageView noHintsUsedAchievement = (ImageView) root.lookup("#noHintsUsed");
 			finalScoreLabel.setText("Score: " + finalScore);
+			ColorAdjust achievedEffect = new ColorAdjust();
+			achievedEffect.setBrightness(0);
+			if(AchievementController.level1Complete) {
+				level1Achievement.setEffect(achievedEffect);			
+			}
+			if(AchievementController.level2Complete) {
+				level2Achievement.setEffect(achievedEffect);
+			}
+			if(AchievementController.level3Complete) {
+				level3Achievement.setEffect(achievedEffect);
+			}
+			if(AchievementController.level4Complete) {
+				level4Achievement.setEffect(achievedEffect);
+			}
+			if(AchievementController.noRiddlesWrong) {
+				noRiddlesWrongAchievement.setEffect(achievedEffect);
+			}
+			if(AchievementController.noHintsUsed) {
+				noHintsUsedAchievement.setEffect(achievedEffect);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();

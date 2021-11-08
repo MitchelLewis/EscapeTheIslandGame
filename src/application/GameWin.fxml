@@ -26,12 +26,14 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="158.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="272.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="330.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="159.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox prefHeight="353.0" prefWidth="450.0" GridPane.columnIndex="1">
+            <VBox prefHeight="353.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <ImageView fitHeight="249.0" fitWidth="384.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,13 +45,13 @@
                   <Insets top="20.0" />
                </GridPane.margin>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
                   <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="25.0" prefWidth="220.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Try again" />
                   <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="25.0" prefWidth="224.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Exit" />
                </children>
             </HBox>
-            <VBox alignment="BOTTOM_CENTER" prefHeight="119.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="119.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <Label fx:id="gameWinText" text="Placeholder for final text" textFill="WHITE" wrapText="true">
                      <font>
@@ -63,6 +65,67 @@
                   </Label>
                </children>
             </VBox>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="331.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <ImageView fx:id="level1Achievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-: white;">
+                           <image>
+                              <Image url="@../assets/img/Level-1.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="level2Achievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                           <image>
+                              <Image url="@../assets/img/Level-2.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="level3Achievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                           <image>
+                              <Image url="@../assets/img/Level-3.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="level4Achievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                           <image>
+                              <Image url="@../assets/img/Level-4.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                        </ImageView>
+                        <ImageView fx:id="noRiddlesWrong" fitHeight="50.0" fitWidth="58.0" pickOnBounds="true" style="-fx-background-color: transparent;">
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                           <image>
+                              <Image url="@../assets/img/no-riddles-wrong.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="noHintsUsed" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                           <image>
+                              <Image url="@../assets/img/book.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="327.0" text="Achievements Unlocked" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </children>

@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import application.AchievementController;
 import application.LevelController;
 import application.Main;
 import application.ScoreController;
@@ -45,6 +46,7 @@ public class AnswerCommand implements Command {
 				scoreController.incrementScore(currentRiddle, gameOutput);
 			} else {
 				if (currentRiddle.getAnswer().contains(answerInQuotes)) {
+					AchievementController.noRiddlesWrong = false;
 					gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
 				}
 				Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
@@ -52,12 +54,14 @@ public class AnswerCommand implements Command {
 				if(healthAmount <= 1) {
 					Parent root;
 					try {
+						AchievementController.noRiddlesWrong = false;
 						root = FXMLLoader.load(getClass().getResource("../GameOver.fxml"));
 						Main.primaryStage.setScene(new Scene(root, 650, 500));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				} else {
+					AchievementController.noRiddlesWrong = false;
 					int randomIdx = new Random().nextInt(this.healthDepletionResponses.size() - 1);
 					String randomHealthDepletionMsg = this.healthDepletionResponses.get(randomIdx);
 					gameOutput.appendText("\n"+ randomHealthDepletionMsg + "\n");
