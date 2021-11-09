@@ -47,6 +47,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
+                  <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="25.0" prefWidth="220.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Post score" />
                   <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="25.0" prefWidth="220.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Try again" />
                   <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="25.0" prefWidth="224.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Exit" />
                </children>
@@ -101,7 +102,7 @@
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                         </ImageView>
-                        <ImageView fx:id="noRiddlesWrong" fitHeight="50.0" fitWidth="58.0" pickOnBounds="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="noRiddlesWrongAchievement" fitHeight="50.0" fitWidth="58.0" pickOnBounds="true" style="-fx-background-color: transparent;">
                            <effect>
                               <ColorAdjust brightness="-0.75" />
                            </effect>
@@ -109,12 +110,20 @@
                               <Image url="@../assets/img/no-riddles-wrong.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="noHintsUsed" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="noHintsUsedAchievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <effect>
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                            <image>
                               <Image url="@../assets/img/book.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="chainedRiddlesAchievement" fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                           <effect>
+                              <ColorAdjust brightness="-0.75" />
+                           </effect>
+                           <image>
+                              <Image url="@../assets/img/Streak.png" />
                            </image>
                         </ImageView>
                      </children>

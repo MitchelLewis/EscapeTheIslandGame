@@ -41,12 +41,18 @@ public class AnswerCommand implements Command {
 		while (m.find()) {
 			String answerInQuotes = m.group(1);
 			if (currentRiddle.getAnswer().equalsIgnoreCase(answerInQuotes)) {
+				AchievementController.amountOfRiddlesAnsweredInARow++;
+				if(AchievementController.amountOfRiddlesAnsweredInARow == 3) {
+					AchievementController.amountOfRiddlesAnsweredInARow = 0;
+					AchievementController.chainedRiddles = true;
+				}
 				gameOutput.appendText("\nSomething seems to be happening.\nType 'next' to continue...");
 				currentRiddle.setHasAnsweredCorrectly(true);
 				scoreController.incrementScore(currentRiddle, gameOutput);
 			} else {
 				if (currentRiddle.getAnswer().contains(answerInQuotes)) {
 					AchievementController.noRiddlesWrong = false;
+					AchievementController.amountOfRiddlesAnsweredInARow = 0;
 					gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
 				}
 				Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
@@ -55,13 +61,16 @@ public class AnswerCommand implements Command {
 					Parent root;
 					try {
 						AchievementController.noRiddlesWrong = false;
+						AchievementController.amountOfRiddlesAnsweredInARow = 0;
 						root = FXMLLoader.load(getClass().getResource("../GameOver.fxml"));
 						Main.primaryStage.setScene(new Scene(root, 650, 500));
+						AchievementController.setAchievementsUnlocked(root);
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				} else {
 					AchievementController.noRiddlesWrong = false;
+					AchievementController.amountOfRiddlesAnsweredInARow = 0;
 					int randomIdx = new Random().nextInt(this.healthDepletionResponses.size() - 1);
 					String randomHealthDepletionMsg = this.healthDepletionResponses.get(randomIdx);
 					gameOutput.appendText("\n"+ randomHealthDepletionMsg + "\n");
