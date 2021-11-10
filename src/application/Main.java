@@ -2,6 +2,8 @@ package application;
 	
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpRequest;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +21,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage){
 		try {
-		
 			Media gameMusic = new Media(new File("src/assets/audio/Pirate_Crew.wav").toURI().toString());
 			mp = new MediaPlayer(gameMusic);
 			

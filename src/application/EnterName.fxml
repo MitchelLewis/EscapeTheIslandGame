@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameWinController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SubmitScoreController">
    <children>
       <GridPane prefHeight="500.0" prefWidth="650.0">
         <columnConstraints>
@@ -64,10 +64,10 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField />
+                        <TextField fx:id="nameEntry" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" text="Submit">
+                  <Button mnemonicParsing="false" onMouseClicked="#handleSubmitScore" text="Submit">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
