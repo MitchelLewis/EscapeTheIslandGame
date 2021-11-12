@@ -31,17 +31,17 @@
          <children>
             <VBox prefHeight="63.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="playBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="25.0" prefWidth="230.0" text="Play">
+                  <Button fx:id="playBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="50" prefWidth="230.0" text="Play" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png');  -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 230px 50px;">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="optionsBtn" mnemonicParsing="false" onMouseClicked="#handleOptions" prefHeight="25.0" prefWidth="220.0" text="Options">
+                  <Button fx:id="optionsBtn" mnemonicParsing="false" onMouseClicked="#handleOptions" prefHeight="50" prefWidth="220.0" text="Options" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 50px;">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="25.0" prefWidth="224.0" text="Exit" />
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="50" prefWidth="224.0" text="Exit" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 224px 50px;" />
                </children>
                <GridPane.margin>
                   <Insets top="20.0" />

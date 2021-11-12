@@ -29,7 +29,9 @@ public class MenuController {
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Game.fxml"));
-			Main.primaryStage.setScene(new Scene(root, 650, 500));
+			Scene scene = new Scene(root, 650, 500);
+			Main.primaryStage.setScene(scene);
+			scene.getStylesheets().add("application/application.css");
 		} catch (IOException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();

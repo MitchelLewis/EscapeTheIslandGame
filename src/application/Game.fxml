@@ -43,16 +43,22 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <VBox alignment="BOTTOM_CENTER" layoutX="16.0" layoutY="123.0" prefHeight="217.0" prefWidth="613.0">
+      <VBox alignment="BOTTOM_CENTER" layoutX="16.0" layoutY="117.0" prefHeight="161.0" prefWidth="605.0">
          <children>
-            <TextArea fx:id="outputText" editable="false" prefHeight="209.0" prefWidth="613.0" style="-fx-background-color: black; -fx-border-color: black; -fx-control-inner-background: black; -fx-text-fill: white;" wrapText="true">
-               <VBox.margin>
-                  <Insets bottom="30.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextArea>
+            <StackPane prefHeight="201.0" prefWidth="613.0" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="180.0" fitWidth="604.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../assets/img/scroll-png-10.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea fx:id="outputText" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="425.0" style="" styleClass="text-area" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </StackPane>
          </children>
       </VBox>
       <Label fx:id="hintAmount" layoutX="398.0" layoutY="325.0" text="3" textFill="WHITE">

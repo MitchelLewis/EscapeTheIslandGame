@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.http.HttpRequest;
 
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
