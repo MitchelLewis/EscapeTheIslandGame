@@ -29,7 +29,7 @@ public class GameController {
 	public void initialize() {
 		try {
 			levelController = new LevelController();
-			commandController = new CommandController(levelController);
+			commandController = new CommandController(levelController, Main.isSkipAllowed);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) outputText.getScene().getWindow();

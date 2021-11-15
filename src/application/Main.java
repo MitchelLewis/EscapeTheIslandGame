@@ -19,6 +19,7 @@ import javafx.scene.media.MediaPlayer;
 public class Main extends Application {
 	public static Stage primaryStage;
 	public static MediaPlayer mp;
+	public static Boolean isSkipAllowed = false;
 	@Override
 	public void start(Stage primaryStage){
 		try {
@@ -41,6 +42,11 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		for(String arg: args) {
+			if(arg.equals("allow-skip")) {
+				isSkipAllowed = true;
+			}
+		}
 		launch(args);
 	}
 }
