@@ -48,7 +48,7 @@ public class GameController {
 				+ "\r\n"
 				+ "You can progress in the game by answering a series of riddles on each level before reaching the strange 'X' marked on the map.\r\n"
 				+ "\r\n"
-				+ "Answering riddles is simple! All you need to do is type, \"answer\" followed by a space and your guess.\r\n"
+				+ "Answering riddles is simple! All you need to do is type, \"answer\" followed by a space and your guess in double quotes (i.e. \"guess\").\r\n"
 				+ "\r\n"
 				+ "If you complete the level, you'll be awarded with an extra life and you'll continue making your way to 'X'.\r\n"
 				+ "\r\n"
@@ -60,6 +60,8 @@ public class GameController {
 				+ "\r\n"
 				+ "Riddles are indicated by the book at the top right of the screen.\r\n"
 				+ "\r\n"
+				+ "If you need to review the commands used to interact with this game, then either type \"help\" in the command box or click the question mark in the top right corner.\r\n"
+				+ "\r\n"
 				+ "Good luck.\r\n"
 				+ "\r\n"
 				+ "Type 'next' to continue.");
@@ -68,5 +70,9 @@ public class GameController {
 	
 	public void handleCommandEntry() {
 		commandController.handleCommand(inputText.getText(), outputText);
+	}
+	
+	public void showHelp() {
+		CommandController.COMMANDS.get("help").handleCommand(outputText, null);
 	}
 }
