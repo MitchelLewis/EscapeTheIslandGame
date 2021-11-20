@@ -9,69 +9,88 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1076.0" prefWidth="1915.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <children>
-      <ImageView fitHeight="500.0" fitWidth="650.0" pickOnBounds="true">
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
          <image>
             <Image url="@../assets/img/menu_bg.jpg" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER_LEFT" layoutX="365.0" layoutY="313.0" prefHeight="172.0" prefWidth="272.0" style="-fx-border-color: black; -fx-border-width: 5px;">
+      <VBox alignment="CENTER" layoutX="1391.0" layoutY="739.0" prefHeight="291.0" prefWidth="498.0" style="-fx-border-color: black; -fx-border-width: 12px;">
          <children>
-            <ImageView fitHeight="95.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/img/book.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="55.0" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/img/heart.png" />
-               </image>
-               <VBox.margin>
-                  <Insets left="9.5" />
-               </VBox.margin>
-            </ImageView>
-            <Label fx:id="scoreLabel" text="Score:" textFill="WHITE">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <StackPane prefHeight="128.0" prefWidth="208.0">
+                     <children>
+                        <ImageView fitHeight="111.0" fitWidth="121.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/heart.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="heartAmount" text="3" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="59.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="122.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/book.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="hintAmount" prefHeight="42.0" prefWidth="26.0" text="3" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="59.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="scoreLabel" text="Score:" textFill="WHITE">
+                     <font>
+                        <Font size="46.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scoreValue" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="46.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <Label fx:id="scoreValue" layoutX="448.0" layoutY="449.0" text="0" textFill="WHITE">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <VBox alignment="BOTTOM_CENTER" layoutX="16.0" layoutY="117.0" prefHeight="161.0" prefWidth="605.0">
+      <VBox alignment="BOTTOM_CENTER" layoutX="259.0" layoutY="226.0" prefHeight="458.0" prefWidth="1257.0">
          <children>
-            <StackPane prefHeight="201.0" prefWidth="613.0" VBox.vgrow="NEVER">
+            <StackPane prefHeight="467.0" prefWidth="1257.0" VBox.vgrow="NEVER">
                <children>
-                  <ImageView fitHeight="180.0" fitWidth="604.0" pickOnBounds="true">
+                  <ImageView fitHeight="510.0" fitWidth="1396.0" pickOnBounds="true">
                      <image>
                         <Image url="@../assets/img/scroll-png-10.png" />
                      </image>
                   </ImageView>
-                  <TextArea fx:id="outputText" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="425.0" style="" styleClass="text-area" wrapText="true">
+                  <TextArea fx:id="outputText" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="867.0" style="" styleClass="text-area" wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="25.0" />
                      </font>
+                     <StackPane.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </StackPane.margin>
                   </TextArea>
                </children>
             </StackPane>
          </children>
       </VBox>
-      <Label fx:id="hintAmount" layoutX="398.0" layoutY="325.0" text="3" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="34.0" />
-         </font>
-      </Label>
-      <Label fx:id="heartAmount" layoutX="398.0" layoutY="393.0" text="3" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="34.0" />
-         </font>
-      </Label>
-      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="325.0" prefHeight="161.0" prefWidth="317.0">
+      <VBox alignment="TOP_CENTER" layoutX="564.0" layoutY="781.0" prefHeight="247.0" prefWidth="563.0">
          <children>
             <TextField fx:id="inputText" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleCommandEntry" prefHeight="32.0" prefWidth="317.0" promptText="Enter command">
                <padding>
@@ -81,15 +100,15 @@
                   <Insets top="10.0" />
                </VBox.margin>
                <font>
-                  <Font size="14.0" />
+                  <Font size="48.0" />
                </font>
             </TextField>
-            <Button fx:id="enterCommandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleCommandEntry" prefHeight="70.0" prefWidth="201.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 200px 70px;" text="Enter">
+            <Button fx:id="enterCommandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleCommandEntry" prefHeight="102.0" prefWidth="231.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 231px 102px;" text="Enter">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="48.0" />
                </font>
                <opaqueInsets>
                   <Insets />
@@ -97,7 +116,7 @@
             </Button>
          </children>
       </VBox>
-      <Button fx:id="hintCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="554.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="81.0" prefWidth="80.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 81px 80px;">
+      <Button fx:id="hintCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="1756.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="129.0" prefWidth="128.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 129px 128px;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

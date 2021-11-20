@@ -20,18 +20,20 @@ public class Main extends Application {
 	public static Stage primaryStage;
 	public static MediaPlayer mp;
 	public static Boolean isSkipAllowed = false;
+	public static Scene currentScene = null;
 	@Override
 	public void start(Stage primaryStage){
 		try {
-			Media gameMusic = new Media(new File("src/assets/audio/Pirate_Crew.wav").toURI().toString());
+			Media gameMusic = new Media(this.getClass().getResource("/assets/audio/music.mp3").toString());
 			mp = new MediaPlayer(gameMusic);
 			
 			this.primaryStage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("Base.fxml"));
-			primaryStage.setScene(new Scene(root, 650, 500));
-			primaryStage.setResizable(false);
+			currentScene = new Scene(root, 1024, 768);
+			primaryStage.setScene(currentScene);
 			primaryStage.setTitle("Escape the Island");
 			primaryStage.getIcons().add(new Image("/assets/img/game_icon.png"));
+			primaryStage.setFullScreen(true);
 			primaryStage.show();
 			
 			mp.play();
@@ -42,11 +44,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		for(String arg: args) {
-			if(arg.equals("allow-skip")) {
-				isSkipAllowed = true;
-			}
-		}
+		isSkipAllowed = true;
 		launch(args);
 	}
 }

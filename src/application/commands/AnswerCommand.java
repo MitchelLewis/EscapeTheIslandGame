@@ -58,16 +58,10 @@ public class AnswerCommand implements Command {
 				Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
 				int healthAmount = Integer.parseInt(healthAmountLbl.getText());
 				if(healthAmount <= 1) {
-					Parent root;
-					try {
-						AchievementController.noRiddlesWrong = false;
-						AchievementController.amountOfRiddlesAnsweredInARow = 0;
-						root = FXMLLoader.load(getClass().getResource("../GameOver.fxml"));
-						Main.primaryStage.setScene(new Scene(root, 650, 500));
-						AchievementController.setAchievementsUnlocked(root);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					AchievementController.noRiddlesWrong = false;
+					AchievementController.amountOfRiddlesAnsweredInARow = 0;
+					Parent root = levelController.showGameOver();
+					AchievementController.setAchievementsUnlocked(root);
 				} else {
 					AchievementController.noRiddlesWrong = false;
 					AchievementController.amountOfRiddlesAnsweredInARow = 0;

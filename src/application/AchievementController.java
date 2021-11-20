@@ -80,4 +80,15 @@ public class AchievementController {
 			chainedRiddlesAchievement.setEffect(achievedEffect);
 		}
 	}
+	
+	public static void resetAchievements() {
+		chainedRiddles = false;
+		noRiddlesWrong = true;
+		noHintsUsed = true;
+		level1Complete = false;
+		level2Complete = false;
+		level3Complete = false;
+		level4Complete = false;
+		
+	}
 }

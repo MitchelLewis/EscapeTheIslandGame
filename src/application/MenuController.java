@@ -26,12 +26,13 @@ public class MenuController {
 	}
 	
 	public void handlePlay(MouseEvent event) {
+		AchievementController.resetAchievements();
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Game.fxml"));
-			Scene scene = new Scene(root, 650, 500);
-			Main.primaryStage.setScene(scene);
-			scene.getStylesheets().add("application/application.css");
+			Main.currentScene.setRoot(root);
+			Main.primaryStage.setFullScreen(true);
+			Main.currentScene.getStylesheets().add("application/application.css");
 		} catch (IOException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();
@@ -44,7 +45,7 @@ public class MenuController {
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Options.fxml"));
-			Main.primaryStage.setScene(new Scene(root, 650, 500));
+			Main.currentScene.setRoot(root);
 		} catch (IOException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();

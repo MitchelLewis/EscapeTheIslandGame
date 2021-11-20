@@ -5,11 +5,13 @@ import java.io.IOException;
 
 import application.commands.CommandController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 
 public class GameController {
 	@FXML
@@ -75,4 +77,5 @@ public class GameController {
 	public void showHelp() {
 		CommandController.COMMANDS.get("help").handleCommand(outputText, null);
 	}
+
 }

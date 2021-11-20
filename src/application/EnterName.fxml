@@ -17,64 +17,64 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SubmitScoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SubmitScoreController">
    <children>
-      <GridPane prefHeight="500.0" prefWidth="650.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="119.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="419.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="111.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="330.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="159.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox alignment="CENTER" layoutY="6.0" prefHeight="1080.0" prefWidth="1920.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="262.0" prefWidth="386.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
-                     <children>
-                        <Label alignment="CENTER" text="Score: " textFill="WHITE">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="scoreLabel" alignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Post your score to our leaderboard:" textFill="WHITE">
+                  <Label alignment="CENTER" text="Score: " textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="56.0" />
                      </font>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
-                     <children>
-                        <Label alignment="CENTER" text="Name:" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="nameEntry" />
-                     </children>
-                  </HBox>
-                  <Button mnemonicParsing="false" onMouseClicked="#handleSubmitScore" text="Submit">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Button>
+                  <Label fx:id="scoreLabel" alignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Label>
                </children>
-            </VBox>
+            </HBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Post your score to our leaderboard:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
+               <children>
+                  <Label alignment="CENTER" text="Name:" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameEntry">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <Button mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="97.0" prefWidth="276.0" text="Submit" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 276px 97px;">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
          </children>
-      </GridPane>
+      </VBox>
    </children>
 </AnchorPane>

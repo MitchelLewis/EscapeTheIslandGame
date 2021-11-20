@@ -41,7 +41,7 @@ public class GameWinController {
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("GameWin.fxml"));
-			Main.primaryStage.setScene(new Scene(root, 650, 500));
+			Main.currentScene.setRoot(root);
 			Label finalScoreLabel = (Label) root.lookup("#finalScoreLabel");
 			finalScoreLabel.setText("Score: " + finalScore);
 			AchievementController.setAchievementsUnlocked(root);
@@ -59,10 +59,11 @@ public class GameWinController {
 	}
 	
 	public void handlePlay(MouseEvent event) {
+		AchievementController.resetAchievements();
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Game.fxml"));
-			Main.primaryStage.setScene(new Scene(root, 650, 500));
+			Main.currentScene.setRoot(root);
 		} catch (IOException e) {
 			e.printStackTrace();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();
@@ -75,8 +76,8 @@ public class GameWinController {
 		try {
 			Stage stage = new Stage();
 			root = FXMLLoader.load(getClass().getResource("EnterName.fxml"));
-			stage.setScene(new Scene(root, 650, 500));
-			stage.setResizable(false);
+			stage.setScene(new Scene(root, 1024, 768));
+			stage.setFullScreen(true);
 			stage.setTitle("Escape the Island");
 			stage.getIcons().add(new Image("/assets/img/game_icon.png"));
 			Label scoreLabel = (Label) root.lookup("#scoreLabel");

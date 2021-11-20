@@ -54,7 +54,7 @@ public class OptionsController {
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Base.fxml"));
-			Main.primaryStage.setScene(new Scene(root, 650, 500));
+			Main.currentScene.setRoot(root);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
