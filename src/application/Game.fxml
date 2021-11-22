@@ -90,23 +90,29 @@
             </StackPane>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="564.0" layoutY="781.0" prefHeight="247.0" prefWidth="563.0">
+      <HBox fx:id="answerSection" alignment="CENTER" layoutX="628.0" layoutY="740.0" prefHeight="78.0" prefWidth="668.0" visible="false">
          <children>
-            <TextField fx:id="inputText" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleCommandEntry" prefHeight="32.0" prefWidth="317.0" promptText="Enter command">
-               <padding>
-                  <Insets bottom="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
+            <TextField fx:id="inputText">
                <font>
-                  <Font size="48.0" />
+                  <Font size="28.0" />
                </font>
             </TextField>
-            <Button fx:id="enterCommandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleCommandEntry" prefHeight="102.0" prefWidth="231.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 231px 102px;" text="Enter">
-               <VBox.margin>
-                  <Insets top="15.0" />
-               </VBox.margin>
+            <Button fx:id="submtAnswerButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleSubmitAnswer" prefHeight="102.0" prefWidth="266.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Submit">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="586.0" layoutY="850.0" prefHeight="102.0" prefWidth="756.0">
+         <children>
+            <Button fx:id="hintCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleHint" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Hint">
                <font>
                   <Font name="System Bold" size="48.0" />
                </font>
@@ -114,11 +120,38 @@
                   <Insets />
                </opaqueInsets>
             </Button>
+            <Button fx:id="answerCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleAnswer" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Answer">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
+            </Button>
          </children>
-      </VBox>
-      <Button fx:id="hintCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="1756.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="129.0" prefWidth="128.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 129px 128px;">
+      </HBox>
+      <Button fx:id="nextCommandButton" alignment="CENTER" contentDisplay="CENTER" layoutX="811.0" layoutY="970.0" mnemonicParsing="false" onMouseClicked="#handleNext" prefHeight="102.0" prefWidth="295.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 295px 102px;" text="Next">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="helpCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="1756.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="129.0" prefWidth="128.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 129px 128px;">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="970.0" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="102.0" prefWidth="295.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 295px 102px;" text="Exit">
+         <font>
+            <Font name="System Bold" size="48.0" />
          </font>
          <opaqueInsets>
             <Insets />

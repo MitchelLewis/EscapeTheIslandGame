@@ -14,6 +14,8 @@ import application.ScoreController;
 import application.story.Riddle;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -48,6 +50,8 @@ public class AnswerCommand implements Command {
 				}
 				gameOutput.appendText("\nSomething seems to be happening.\nType 'next' to continue...");
 				currentRiddle.setHasAnsweredCorrectly(true);
+				Button nextButton = (Button) gameOutput.getScene().lookup("#nextCommandButton");
+				nextButton.setDisable(false);
 				scoreController.incrementScore(currentRiddle, gameOutput);
 			} else {
 				if (currentRiddle.getAnswer().contains(answerInQuotes)) {

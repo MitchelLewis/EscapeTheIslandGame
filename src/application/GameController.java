@@ -8,8 +8,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+
 import javafx.stage.Stage;
 
 
@@ -23,7 +26,15 @@ public class GameController {
 	@FXML
 	Label hintAmount;
 	@FXML
-	Button enterCommandButton;
+	Button nextCommandButton;
+	@FXML
+	Button answerCommandButton;
+	@FXML
+	Button hintCommandButton;
+	@FXML
+	Button exitButton;
+	@FXML
+	HBox answerSection;
 	private LevelController levelController;
 	private CommandController commandController;
 	
@@ -77,5 +88,34 @@ public class GameController {
 	public void showHelp() {
 		CommandController.COMMANDS.get("help").handleCommand(outputText, null);
 	}
+	
+	public void handleExit(MouseEvent event) {
+	    Stage stage = (Stage) exitButton.getScene().getWindow();
+	    stage.close();
+	}
+	
+	public void handleNext() {
+		commandController.handleCommand("next", outputText);
+		nextCommandButton.setDisable(true);
+		hintCommandButton.setDisable(false);
+		answerCommandButton.setDisable(false);
+		answerSection.setVisible(false);
+	}
+	
+	public void handleHint() {
+		commandController.handleCommand("hint", outputText);
+		hintCommandButton.setDisable(true);
+	}
+
+	public void handleAnswer() {
+		answerCommandButton.setDisable(true);
+		answerSection.setVisible(true);
+		inputText.requestFocus();
+	}
+	
+	public void handleSubmitAnswer() {
+		commandController.handleCommand("answer \"" + inputText.getText() + "\"", outputText);
+	}
+
 
 }
