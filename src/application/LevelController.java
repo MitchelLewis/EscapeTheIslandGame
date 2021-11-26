@@ -66,8 +66,19 @@ public class LevelController {
 		} else {
 			if(level + 1 == AMOUNT_OF_LEVELS && riddleNumber + 1 == 2) {
 				AchievementController.setLevelComplete(level);
-				Label scoreLabel = (Label) healthLabel.getScene().lookup("#scoreValue");
-				new GameWinController().show(scoreLabel.getText());
+				Label score = (Label) healthLabel.getScene().lookup("#scoreValue");
+				Parent root;
+				try {
+					root = FXMLLoader.load(getClass().getResource("GameWin.fxml"));
+					AchievementController.setAchievementsUnlocked(root);
+					Label finalScoreLabel = (Label) root.lookup("#finalScoreLabel");
+					finalScoreLabel.setText("Score: " + score.getText());	
+					Main.currentScene.setRoot(root);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			} else if(riddleNumber < 1) {
 				riddleNumber++;
 			} else {
@@ -86,6 +97,7 @@ public class LevelController {
 			Parent root;
 			root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
 			Main.currentScene.setRoot(root);
+			Main.primaryStage.setFullScreen(true);
 			return root;
 		} catch (IOException e) {
 			e.printStackTrace();

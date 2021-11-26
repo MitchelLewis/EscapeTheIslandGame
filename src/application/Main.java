@@ -21,6 +21,7 @@ public class Main extends Application {
 	public static MediaPlayer mp;
 	public static Boolean isSkipAllowed = false;
 	public static Scene currentScene = null;
+	public static int textSize = 20;
 	@Override
 	public void start(Stage primaryStage){
 		try {
@@ -28,14 +29,13 @@ public class Main extends Application {
 			mp = new MediaPlayer(gameMusic);
 			
 			this.primaryStage = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("Base.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 			currentScene = new Scene(root, 1024, 768);
 			primaryStage.setScene(currentScene);
 			primaryStage.setTitle("Escape the Island");
 			primaryStage.getIcons().add(new Image("/assets/img/game_icon.png"));
 			primaryStage.setFullScreen(true);
 			primaryStage.show();
-			
 			mp.play();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

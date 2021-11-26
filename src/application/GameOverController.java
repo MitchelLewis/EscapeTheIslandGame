@@ -5,23 +5,22 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
-public class MenuController {
+public class GameOverController {
 	@FXML
-	Button playBtn;
-	@FXML
-	Button optionsBtn;
+	Button tryAgainBtn;
 	@FXML
 	Button exitBtn;
+	@FXML
+	Label achievementsUnlockedLabel;
 	
 	@FXML
 	public void initialize() {
-		FontSetter.setFontForElements(playBtn, optionsBtn, exitBtn);
+		FontSetter.setFontForElements(tryAgainBtn, exitBtn, achievementsUnlockedLabel);
 	}
 	
 	public void handleExit(MouseEvent event) {
@@ -44,17 +43,4 @@ public class MenuController {
 		}
 		
 	}
-	
-	public void handleOptions(MouseEvent event){
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("Options.fxml"));
-			Main.currentScene.setRoot(root);
-		} catch (IOException e) {
-			e.printStackTrace();
-			Stage stage = (Stage) exitBtn.getScene().getWindow();
-			stage.close();		
-		}
-	}
-	
 }

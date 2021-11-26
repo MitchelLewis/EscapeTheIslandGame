@@ -17,11 +17,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameOverController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="1257.0" prefWidth="1927.0">
          <children>
-            <Label alignment="CENTER" prefHeight="39.0" prefWidth="625.0" text="Achievements Unlocked" textFill="WHITE">
+            <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" prefHeight="39.0" prefWidth="625.0" text="Achievements Unlocked" textFill="WHITE">
                <font>
                   <Font size="49.0" />
                </font>
@@ -97,8 +97,8 @@
             </ImageView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="76.0" prefWidth="312.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Try again" />
-                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="76.0" prefWidth="312.0" style="-fx-border-width: 5px; -fx-border-color: black; -fx-background-color: white; -fx-background-insets: 0,0,0,0;" text="Exit" />
+                  <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="76.0" prefWidth="312.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 312px 100px;" text="Try again" />
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="76.0" prefWidth="312.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 312px 100px;" text="Exit" />
                </children>
             </HBox>
          </children>

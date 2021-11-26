@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 
@@ -20,12 +21,23 @@ public class OptionsController {
 	
 	@FXML
 	Slider volumeSlider;
+	
+	@FXML
+	Slider textSizeSlider;
 
+	@FXML
+	Label volumeLbl;
+	
+	@FXML
+	Label textLbl;
+	
 	boolean isMuted;
 	
 	@FXML
 	public void initialize()
 	{
+		FontSetter.setFontForElements(muteBtn, backBtn, volumeLbl, textLbl);
+		textSizeSlider.setValue(Main.textSize);
 		volumeSlider.setValue(Main.mp.getVolume() * 100);
 		isMuted =  Main.mp.isMute();
 	}
@@ -49,11 +61,17 @@ public class OptionsController {
 		Main.mp.setVolume(volumeSlider.getValue()/100);
 	}
 	
+	public void handleTextSize(MouseEvent event)
+	{
+		FontSetter.setFontForElements(muteBtn, backBtn, volumeLbl, textLbl);
+		Main.textSize = (int) textSizeSlider.getValue();
+	}
+	
 	public void handleBack(MouseEvent event)
 	{
 		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("Base.fxml"));
+			root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 			Main.currentScene.setRoot(root);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

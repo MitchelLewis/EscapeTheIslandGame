@@ -39,7 +39,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="0.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="muteBtn" mnemonicParsing="false" onMouseClicked="#handleMute" prefHeight="69.0" prefWidth="307.0" text="Mute/Unmute Sound">
+                  <Button fx:id="muteBtn" mnemonicParsing="false" onMouseClicked="#handleMute" prefHeight="95.0" prefWidth="450.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 450px 95px;" text="Mute/Unmute Sound">
                      <VBox.margin>
                         <Insets bottom="30.0" />
                      </VBox.margin>
@@ -54,10 +54,17 @@
                      <VBox.margin>
                         <Insets bottom="30.0" />
                      </VBox.margin></Slider>
-                  <Button fx:id="backBtn" mnemonicParsing="false" onMouseClicked="#handleBack" text="Back to Menu">
+                  <Label fx:id="textLbl" text="Text size" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="textSizeSlider" blockIncrement="2.0" majorTickUnit="2.0" max="30.0" min="10.0" minorTickCount="2" onMouseClicked="#handleTextSize" onMouseDragged="#handleTextSize" showTickMarks="true" snapToTicks="true" value="20.0" />
+                  <Button fx:id="backBtn" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="84.0" prefWidth="307.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 307px 84px;" text="Back to Menu">
                      <font>
                         <Font size="27.0" />
-                     </font></Button>
+                     </font>
+                  </Button>
                </children>
                <GridPane.margin>
                   <Insets top="20.0" />

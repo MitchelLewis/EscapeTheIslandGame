@@ -35,11 +35,14 @@ public class GameController {
 	Button exitButton;
 	@FXML
 	HBox answerSection;
+	@FXML
+	Button submtAnswerButton;
 	private LevelController levelController;
 	private CommandController commandController;
 	
 	@FXML
 	public void initialize() {
+		FontSetter.setFontForElements(outputText, inputText, nextCommandButton, answerCommandButton, hintCommandButton, exitButton, answerSection, submtAnswerButton);
 		try {
 			levelController = new LevelController();
 			commandController = new CommandController(levelController, Main.isSkipAllowed);
@@ -114,7 +117,11 @@ public class GameController {
 	}
 	
 	public void handleSubmitAnswer() {
-		commandController.handleCommand("answer \"" + inputText.getText() + "\"", outputText);
+		if(inputText.getText().equals("skip") && Main.isSkipAllowed) {
+			commandController.handleCommand("skip", outputText);
+		} else {
+			commandController.handleCommand("answer \"" + inputText.getText() + "\"", outputText);
+		}
 	}
 
 

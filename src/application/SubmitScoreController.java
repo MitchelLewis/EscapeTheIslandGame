@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -24,19 +25,29 @@ import javafx.stage.Stage;
 
 public class SubmitScoreController {
 	@FXML
-	Label scoreLabel;
+	Label scoreKeyLabel;
+	@FXML
+	Label scoreValueLabel;
 	@FXML
 	TextField nameEntry;
+	@FXML
+	Label nameLabel;
+	@FXML
+	Button postScoreBtn;
+	@FXML
+	Label postScoreDescriptionLabel;
+	
 	private HttpClient httpClient;
 	
 	@FXML
 	public void initialize() {
+		FontSetter.setFontForElements(scoreKeyLabel, scoreValueLabel, nameEntry, postScoreBtn, nameLabel, postScoreDescriptionLabel);
 		this.httpClient = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
 	}
 	
 	public void handleSubmitScore(MouseEvent event) {
 		String name = nameEntry.getText();
-		String score = scoreLabel.getText();
+		String score = scoreValueLabel.getText();
 		try {
 			sendScoreToWebsite(name, score, nameEntry.getScene());
 		} catch (Exception e) {
