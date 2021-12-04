@@ -40,7 +40,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>application.Launcher</mainClass>
+            <mainClass>main.java.application.Launcher</mainClass>
           </manifest>
         </archive>
         <descriptorRefs>
