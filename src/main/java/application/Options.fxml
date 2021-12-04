@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.OptionsController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../assets/img/menu_bg.jpg" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="14.0" layoutY="16.0" prefHeight="1052.0" prefWidth="1894.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1000.0" minHeight="10.0" prefHeight="570.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="285.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="0.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="muteBtn" mnemonicParsing="false" onMouseClicked="#handleMute" prefHeight="95.0" prefWidth="450.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 450px 95px;" text="Mute/Unmute Sound">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Button>
+                  <Label fx:id="volumeLbl" text="Audio Volume" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Label>
+                  <Slider fx:id="volumeSlider" onMouseClicked="#handleVolume" onMouseDragged="#handleVolume" showTickMarks="true">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin></Slider>
+                  <Label fx:id="textLbl" text="Text size" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="textSizeSlider" blockIncrement="2.0" majorTickUnit="2.0" max="30.0" min="10.0" minorTickCount="2" onMouseClicked="#handleTextSize" onMouseDragged="#handleTextSize" showTickMarks="true" snapToTicks="true" value="20.0" />
+                  <Button fx:id="backBtn" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="84.0" prefWidth="307.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 307px 84px;" text="Back to Menu">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
