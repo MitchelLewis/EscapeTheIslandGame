@@ -47,7 +47,7 @@ public class AchievementController {
 		t = new Tooltip("Level 4 complete");
         Tooltip.install(level4Achievement, t);
 		ImageView noRiddlesWrongAchievement = (ImageView) root.lookup("#noRiddlesWrongAchievement");
-		 t = new Tooltip("Perfect score - no riddles wrong!");
+		t = new Tooltip("Perfect score - no riddles wrong!");
 	    Tooltip.install(noRiddlesWrongAchievement, t);
 		ImageView noHintsUsedAchievement = (ImageView) root.lookup("#noHintsUsedAchievement");
         t = new Tooltip("No hints used");
