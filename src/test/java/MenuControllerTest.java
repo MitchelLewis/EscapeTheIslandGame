@@ -12,6 +12,8 @@ import javafx.scene.*;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
@@ -19,7 +21,7 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.io.IOException;
 import java.lang.InterruptedException;
 
-public class GameOverControllerTest extends ApplicationTest {
+public class MenuControllerTest extends ApplicationTest {
 			
 	Boolean isClosed = false;
 	Stage stage;
@@ -27,20 +29,28 @@ public class GameOverControllerTest extends ApplicationTest {
     @Override
     public void start(Stage stage) throws IOException {
     	Parent root = FXMLLoader.load(
-                getClass().getResource("../../main/java/application/GameOver.fxml"));
+                getClass().getResource("../../main/java/application/Menu.fxml"));
         this.stage = stage;
         Scene scene = new Scene(root, 1920, 1080);
         Main.currentScene = scene;
         Main.primaryStage = stage;
+		Media gameMusic = new Media(this.getClass().getResource("../../assets/audio/music.mp3").toString());
+		Main.mp = new MediaPlayer(gameMusic);
         stage.setScene(scene);
         stage.setOnHidden(e -> isClosed = true);
         stage.show();
     }
     
     @Test
-    public void handleTryAgainTest() {
-    	clickOn("#tryAgainBtn");
+    public void handlePlayTest() {
+    	clickOn("#playBtn");
     	assertTrue(this.stage.getScene().lookup("#outputText").isVisible());
+    }
+    
+    @Test
+    public void handleOptionsTest() {
+    	clickOn("#optionsBtn");
+    	assertTrue(this.stage.getScene().lookup("#muteBtn").isVisible());
     }
 
 

@@ -38,7 +38,7 @@ public class OptionsController {
 		FontSetter.setFontForElements(muteBtn, backBtn, volumeLbl, textLbl);
 		textSizeSlider.setValue(Main.textSize);
 		volumeSlider.setValue(Main.mp.getVolume() * 100);
-		isMuted =  Main.mp.isMute();
+		isMuted = Main.mp.isMute();
 	}
 	
 	public void handleMute(MouseEvent event){
@@ -55,19 +55,17 @@ public class OptionsController {
 		}
 	}
 	
-	public void handleVolume(MouseEvent event)
-	{
+	public void handleVolume(MouseEvent event) {
 		Main.mp.setVolume(volumeSlider.getValue()/100);
+
 	}
 	
-	public void handleTextSize(MouseEvent event)
-	{
+	public void handleTextSize(MouseEvent event) {
 		FontSetter.setFontForElements(muteBtn, backBtn, volumeLbl, textLbl);
 		Main.textSize = (int) textSizeSlider.getValue();
 	}
 	
-	public void handleBack(MouseEvent event)
-	{
+	public void handleBack(MouseEvent event) {
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
