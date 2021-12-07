@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -18,10 +19,14 @@ public class MenuController {
 	Button optionsBtn;
 	@FXML
 	Button exitBtn;
+	@FXML
+	ImageView bgImg;
 	
 	@FXML
 	public void initialize() {
 		FontSetter.setFontForElements(playBtn, optionsBtn, exitBtn);
+		bgImg.fitWidthProperty().bind(Main.primaryStage.widthProperty()); 
+		bgImg.fitHeightProperty().bind(Main.primaryStage.heightProperty()); 
 	}
 	
 	public void handleExit(MouseEvent event) {

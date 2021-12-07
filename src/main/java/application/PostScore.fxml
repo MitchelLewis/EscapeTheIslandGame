@@ -17,11 +17,18 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.SubmitScoreController">
+
+<GridPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.SubmitScoreController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <VBox alignment="CENTER" layoutY="6.0" prefHeight="1080.0" prefWidth="1920.0">
+      <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
+            <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label fx:id="scoreKeyLabel" alignment="CENTER" text="Score: " textFill="WHITE">
                      <HBox.margin>
@@ -43,10 +50,10 @@
                   <Font name="System Bold" size="42.0" />
                </font>
                <padding>
-                  <Insets bottom="10.0" top="10.0" />
+                  <Insets top="10.0" />
                </padding>
             </Label>
-            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
+            <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label fx:id="nameLabel" alignment="CENTER" text="Name:" textFill="WHITE">
                      <HBox.margin>
@@ -66,7 +73,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="97.0" prefWidth="276.0" text="Submit" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 276px 97px;">
+            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="97.0" prefWidth="276.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 276px 97px;" text="Submit">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
@@ -77,4 +84,4 @@
          </children>
       </VBox>
    </children>
-</AnchorPane>
+</GridPane>

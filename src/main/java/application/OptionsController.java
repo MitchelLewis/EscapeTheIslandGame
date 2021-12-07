@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 
@@ -30,6 +31,9 @@ public class OptionsController {
 	@FXML
 	Label textLbl;
 	
+	@FXML
+	ImageView bgImg;
+	
 	boolean isMuted;
 	
 	@FXML
@@ -39,6 +43,8 @@ public class OptionsController {
 		textSizeSlider.setValue(Main.textSize);
 		volumeSlider.setValue(Main.mp.getVolume() * 100);
 		isMuted =  Main.mp.isMute();
+		bgImg.fitWidthProperty().bind(Main.primaryStage.widthProperty()); 
+		bgImg.fitHeightProperty().bind(Main.primaryStage.heightProperty()); 
 	}
 	
 	public void handleMute(MouseEvent event){

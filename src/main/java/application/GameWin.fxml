@@ -17,9 +17,22 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameWinController">
+
+<GridPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameWinController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="445.0" layoutY="40.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" />
+      <ImageView fitHeight="307.0" fitWidth="502.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <image>
+            <Image url="@../../../assets/img/game_win.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <children>
             <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" prefHeight="71.0" prefWidth="601.0" text="Achievements Unlocked" textFill="WHITE">
                <font>
@@ -28,7 +41,7 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: transparent;">
                <children>
-                  <ImageView fx:id="level1Achievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-: white;">
+                  <ImageView fx:id="level1Achievement" fitHeight="101.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-: white;">
                      <image>
                         <Image url="@../../../assets/img/Level-1.png" />
                      </image>
@@ -36,7 +49,7 @@
                         <ColorAdjust brightness="-0.75" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="level2Achievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="level2Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                      <image>
                         <Image url="@../../../assets/img/Level-2.png" />
                      </image>
@@ -44,7 +57,7 @@
                         <ColorAdjust brightness="-0.75" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="level3Achievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="level3Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                      <image>
                         <Image url="@../../../assets/img/Level-3.png" />
                      </image>
@@ -52,7 +65,7 @@
                         <ColorAdjust brightness="-0.75" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="level4Achievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="level4Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                      <image>
                         <Image url="@../../../assets/img/Level-4.png" />
                      </image>
@@ -60,7 +73,7 @@
                         <ColorAdjust brightness="-0.75" />
                      </effect>
                   </ImageView>
-                  <ImageView fx:id="noRiddlesWrongAchievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="noRiddlesWrongAchievement" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" style="-fx-background-color: transparent;">
                      <effect>
                         <ColorAdjust brightness="-0.75" />
                      </effect>
@@ -68,7 +81,7 @@
                         <Image url="@../../../assets/img/no-riddles-wrong.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="noHintsUsedAchievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="noHintsUsedAchievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                      <effect>
                         <ColorAdjust brightness="-0.75" />
                      </effect>
@@ -76,7 +89,7 @@
                         <Image url="@../../../assets/img/book.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="chainedRiddlesAchievement" fitHeight="154.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                  <ImageView fx:id="chainedRiddlesAchievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                      <effect>
                         <ColorAdjust brightness="-0.75" />
                      </effect>
@@ -84,15 +97,11 @@
                         <Image url="@../../../assets/img/Streak.png" />
                      </image>
                   </ImageView>
-               </children></HBox>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <ImageView fitHeight="471.0" fitWidth="710.0" layoutX="649.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/img/game_win.jpg" />
-         </image>
-      </ImageView>
-      <VBox alignment="BOTTOM_CENTER" layoutX="628.0" layoutY="731.0" prefHeight="189.0" prefWidth="667.0">
+      <VBox alignment="BOTTOM_CENTER" prefHeight="189.0" prefWidth="667.0" GridPane.hgrow="NEVER" GridPane.vgrow="ALWAYS">
          <children>
             <Label fx:id="gameWinText" text="To be continued..." textFill="WHITE" wrapText="true">
                <font>
@@ -104,23 +113,26 @@
                   <Font name="System Bold" size="56.0" />
                </font>
             </Label>
+            <HBox alignment="CENTER" prefHeight="95.0" prefWidth="1063.0">
+               <children>
+                  <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="65.0" prefWidth="344.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 344px 95px;" text="Post score" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Try again">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Exit">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" layoutX="431.0" layoutY="927.0" prefHeight="95.0" prefWidth="1063.0">
-         <children>
-            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="65.0" prefWidth="344.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 344px 95px;" text="Post score">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-            <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Try again">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-            <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Exit">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-         </children>
-      </HBox>
    </children>
-</AnchorPane>
+</GridPane>

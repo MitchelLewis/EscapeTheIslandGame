@@ -17,20 +17,27 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameOverController">
+
+<GridPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameOverController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="1257.0" prefWidth="1927.0">
+      <VBox alignment="TOP_CENTER" prefHeight="1257.0" prefWidth="1927.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <children>
             <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" prefHeight="39.0" prefWidth="625.0" text="Achievements Unlocked" textFill="WHITE">
                <font>
                   <Font size="49.0" />
                </font>
             </Label>
-            <VBox prefHeight="173.0" prefWidth="1927.0">
+            <VBox maxHeight="-Infinity" prefHeight="173.0" prefWidth="1927.0" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER" prefHeight="146.0" prefWidth="1054.0" style="-fx-background-color: transparent;">
+                  <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="146.0" prefWidth="1054.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="level1Achievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-: white;">
+                        <ImageView fx:id="level1Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-: white;">
                            <image>
                               <Image url="@../../../assets/img/Level-1.png" />
                            </image>
@@ -38,7 +45,7 @@
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                         </ImageView>
-                        <ImageView fx:id="level2Achievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="level2Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <image>
                               <Image url="@../../../assets/img/Level-2.png" />
                            </image>
@@ -46,7 +53,7 @@
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                         </ImageView>
-                        <ImageView fx:id="level3Achievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="level3Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <image>
                               <Image url="@../../../assets/img/Level-3.png" />
                            </image>
@@ -54,7 +61,7 @@
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                         </ImageView>
-                        <ImageView fx:id="level4Achievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="level4Achievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <image>
                               <Image url="@../../../assets/img/Level-4.png" />
                            </image>
@@ -62,7 +69,7 @@
                               <ColorAdjust brightness="-0.75" />
                            </effect>
                         </ImageView>
-                        <ImageView fx:id="noHintsUsedAchievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="noHintsUsedAchievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <effect>
                               <ColorAdjust brightness="-0.75" />
                            </effect>
@@ -70,7 +77,7 @@
                               <Image url="@../../../assets/img/book.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="chainedRiddlesAchievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="chainedRiddlesAchievement" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                            <effect>
                               <ColorAdjust brightness="-0.75" />
                            </effect>
@@ -78,7 +85,7 @@
                               <Image url="@../../../assets/img/Streak.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="noRiddlesWrongAchievement" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" style="-fx-background-color: transparent;">
+                        <ImageView fx:id="noRiddlesWrongAchievement" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" style="-fx-background-color: transparent;">
                            <effect>
                               <ColorAdjust brightness="-0.75" />
                            </effect>
@@ -90,12 +97,12 @@
                   </HBox>
                </children>
             </VBox>
-            <ImageView fitHeight="512.0" fitWidth="880.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="283.0" fitWidth="722.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/img/game_over.png" />
                </image>
             </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="76.0" prefWidth="312.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 312px 100px;" text="Try again" />
                   <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="76.0" prefWidth="312.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 312px 100px;" text="Exit" />
@@ -104,4 +111,4 @@
          </children>
       </VBox>
    </children>
-</AnchorPane>
+</GridPane>
