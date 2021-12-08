@@ -51,7 +51,7 @@ public class GameWinController {
 		}
 	}
 	
-	public void handleSubmitScore(MouseEvent event) {
+	public void handleSubmitScore(MouseEvent event) throws InterruptedException {
 		Parent root;
 		try {
 			Stage stage = new Stage();
@@ -62,6 +62,7 @@ public class GameWinController {
 			stage.getIcons().add(new Image("/assets/img/game_icon.png"));
 			Label scoreLabel = (Label) root.lookup("#scoreValueLabel");
 			scoreLabel.setText(finalScoreLabel.getText().split(" ")[1]);
+			Thread.sleep(2000);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

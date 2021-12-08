@@ -11,6 +11,8 @@ public class Riddle {
 		this.riddleElement = riddle;
 		this.answer = answer;
 		this.hint = hint;
+		this.hasAnsweredCorrectly = false;
+		this.usedHint = false;
 	}
 
 	public String getRiddle() {

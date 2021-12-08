@@ -82,10 +82,6 @@ public class GameController {
 		
 	}
 	
-	public void handleCommandEntry() {
-		commandController.handleCommand(inputText.getText(), outputText);
-	}
-	
 	public void showHelp() {
 		CommandController.COMMANDS.get("help").handleCommand(outputText, null);
 	}
