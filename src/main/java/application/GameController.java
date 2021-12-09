@@ -117,6 +117,10 @@ public class GameController {
 			commandController.handleCommand("answer \"" + inputText.getText() + "\"", outputText);
 		}
 	}
+	
+	public LevelController getLevelController() {
+		return this.levelController;
+	}
 
 
 }

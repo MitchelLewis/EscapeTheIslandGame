@@ -87,7 +87,7 @@
                </children></HBox>
          </children>
       </VBox>
-      <ImageView fitHeight="471.0" fitWidth="710.0" layoutX="649.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="gameWinImg" fitHeight="471.0" fitWidth="710.0" layoutX="649.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/img/game_win.jpg" />
          </image>

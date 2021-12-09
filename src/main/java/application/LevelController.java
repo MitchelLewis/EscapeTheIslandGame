@@ -15,6 +15,8 @@ import main.java.application.story.Riddle;
 import main.java.application.story.StoryRiddle;
 import javafx.scene.control.Label;
 import javafx.fxml.FXMLLoader;
+import java.lang.InterruptedException;
+
 import javafx.scene.Parent;
 
 public class LevelController {
@@ -107,7 +109,10 @@ public class LevelController {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
+				
 
 			} else if(riddleNumber < 1) {
 				riddleNumber++;
