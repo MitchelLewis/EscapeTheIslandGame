@@ -92,7 +92,7 @@ public class GameController {
 	}
 	
 	public void handleNext() {
-		commandController.handleCommand("next", outputText);
+		commandController.handleCommand("next", null, outputText);
 		nextCommandButton.setDisable(true);
 		hintCommandButton.setDisable(false);
 		answerCommandButton.setDisable(false);
@@ -100,7 +100,7 @@ public class GameController {
 	}
 	
 	public void handleHint() {
-		commandController.handleCommand("hint", outputText);
+		commandController.handleCommand("hint", null, outputText);
 		hintCommandButton.setDisable(true);
 	}
 
@@ -112,9 +112,9 @@ public class GameController {
 	
 	public void handleSubmitAnswer() {
 		if(inputText.getText().equals("skip") && Main.isSkipAllowed) {
-			commandController.handleCommand("skip", outputText);
+			commandController.handleCommand("skip", null, outputText);
 		} else {
-			commandController.handleCommand("answer \"" + inputText.getText() + "\"", outputText);
+			commandController.handleCommand("answer", inputText.getText(), outputText);
 		}
 	}
 	

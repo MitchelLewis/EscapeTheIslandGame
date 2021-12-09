@@ -34,45 +34,39 @@ public class AnswerCommand implements Command {
 	@Override
 	public void handleCommand(TextArea gameOutput, String answer) {
 		StoryRiddle currentRiddle = levelController.getRiddle();
-		Pattern p = Pattern.compile("\"([^\"]*)\"");
-		Matcher m = p.matcher(answer.replace("answer ", ""));
-		while (m.find()) {
-			String answerInQuotes = m.group(1);
-			if (currentRiddle.getRiddleElement().getAnswer().equalsIgnoreCase(answerInQuotes)) {
-				AchievementController.amountOfRiddlesAnsweredInARow++;
-				if(AchievementController.amountOfRiddlesAnsweredInARow == 3) {
-					AchievementController.amountOfRiddlesAnsweredInARow = 0;
-					AchievementController.chainedRiddles = true;
-				}
-				gameOutput.appendText("\nSomething seems to be happening.\nType 'next' to continue...");
-				currentRiddle.setHasAnsweredCorrectly(true);
-				Button nextButton = (Button) gameOutput.getScene().lookup("#nextCommandButton");
-				nextButton.setDisable(false);
-				scoreController.incrementScore(currentRiddle, gameOutput);
-			} else {
-				if (currentRiddle.getRiddleElement().getAnswer().contains(answerInQuotes)) {
-					AchievementController.noRiddlesWrong = false;
-					AchievementController.amountOfRiddlesAnsweredInARow = 0;
-					gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
-				}
-				Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
-				int healthAmount = Integer.parseInt(healthAmountLbl.getText());
-				if(healthAmount <= 1) {
-					AchievementController.noRiddlesWrong = false;
-					AchievementController.amountOfRiddlesAnsweredInARow = 0;
-					Parent root = levelController.showGameOver();
-					AchievementController.setAchievementsUnlocked(root);
-				} else {
-					AchievementController.noRiddlesWrong = false;
-					AchievementController.amountOfRiddlesAnsweredInARow = 0;
-					int randomIdx = new Random().nextInt(this.healthDepletionResponses.size() - 1);
-					String randomHealthDepletionMsg = this.healthDepletionResponses.get(randomIdx);
-					gameOutput.appendText("\n"+ randomHealthDepletionMsg + "\n");
-					healthAmount--;
-					healthAmountLbl.setText("" + healthAmount);
-				}
+		if (currentRiddle.getRiddleElement().getAnswer().equalsIgnoreCase(answer)) {
+			AchievementController.amountOfRiddlesAnsweredInARow++;
+			if(AchievementController.amountOfRiddlesAnsweredInARow == 3) {
+				AchievementController.amountOfRiddlesAnsweredInARow = 0;
+				AchievementController.chainedRiddles = true;
 			}
-			
+			gameOutput.appendText("\nSomething seems to be happening.\nType 'next' to continue...");
+			currentRiddle.setHasAnsweredCorrectly(true);
+			Button nextButton = (Button) gameOutput.getScene().lookup("#nextCommandButton");
+			nextButton.setDisable(false);
+			scoreController.incrementScore(currentRiddle, gameOutput);
+		} else {
+			if (currentRiddle.getRiddleElement().getAnswer().contains(answer)) {
+				AchievementController.noRiddlesWrong = false;
+				AchievementController.amountOfRiddlesAnsweredInARow = 0;
+				gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
+			}
+			Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
+			int healthAmount = Integer.parseInt(healthAmountLbl.getText());
+			if(healthAmount <= 1) {
+				AchievementController.noRiddlesWrong = false;
+				AchievementController.amountOfRiddlesAnsweredInARow = 0;
+				Parent root = levelController.showGameOver();
+				AchievementController.setAchievementsUnlocked(root);
+			} else {
+				AchievementController.noRiddlesWrong = false;
+				AchievementController.amountOfRiddlesAnsweredInARow = 0;
+				int randomIdx = new Random().nextInt(this.healthDepletionResponses.size() - 1);
+				String randomHealthDepletionMsg = this.healthDepletionResponses.get(randomIdx);
+				gameOutput.appendText("\n"+ randomHealthDepletionMsg + "\n");
+				healthAmount--;
+				healthAmountLbl.setText("" + healthAmount);
+			}
 		}
 	}
 

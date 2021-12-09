@@ -57,7 +57,7 @@ public class ScoreControllerTest extends ApplicationTest {
     	ScoreController controller = new ScoreController();
     	StoryRiddle riddleUsedHint = new StoryRiddle("story1", new Riddle("riddle", "answer", "hint"));
     	riddleUsedHint.setUsedHint(true);
-    	TextArea outputText = (TextArea) this.stage.getScene().lookup("#outputText");
+    	TextArea outputText = (TextArea) this.stage.getScene().lookup("#outputText"); 
     	// Avoid throwing IllegalStateException by running from a non-JavaFX thread.
     	Platform.runLater(
     	  () -> {

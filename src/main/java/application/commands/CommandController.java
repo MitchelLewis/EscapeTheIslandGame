@@ -22,13 +22,9 @@ public class CommandController {
 		}
 	}
 	
-	public void handleCommand(String command, TextArea gameOutput) {
-		String strippedCommand = command.split(" ")[0];
-		if(COMMANDS.containsKey(strippedCommand)) {
-			COMMANDS.get(strippedCommand).handleCommand(gameOutput, command);
-		} else {
-			Alert alert = new Alert(AlertType.INFORMATION, "Invalid command, type 'help' to see valid commands.");
-			alert.showAndWait();
+	public void handleCommand(String command, String answer, TextArea gameOutput) {
+		if(COMMANDS.containsKey(command)) {
+			COMMANDS.get(command).handleCommand(gameOutput, answer);
 		}
 	}
 	
