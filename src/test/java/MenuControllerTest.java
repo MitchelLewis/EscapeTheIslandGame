@@ -20,6 +20,8 @@ import javafx.fxml.*;
 import org.testfx.framework.junit.ApplicationTest;
 import java.io.IOException;
 import java.lang.InterruptedException;
+import org.testfx.api.FxRobot;
+
 
 public class MenuControllerTest extends ApplicationTest {
 			
@@ -59,6 +61,4 @@ public class MenuControllerTest extends ApplicationTest {
     	clickOn("#exitBtn");
     	assertTrue(isClosed);
     }
-    
-
 }

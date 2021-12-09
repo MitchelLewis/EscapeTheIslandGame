@@ -17,6 +17,7 @@ public class Main extends Application {
 	public static Boolean isSkipAllowed = false;
 	public static Scene currentScene = null;
 	public static int textSize = 20;
+	public static String currentGameVersion = "1.0.0";
 	@Override
 	public void start(Stage primaryStage){
 		try {

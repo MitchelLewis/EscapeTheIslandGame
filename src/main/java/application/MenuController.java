@@ -6,8 +6,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpClient.Version;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import javafx.stage.Stage;
 
 
@@ -19,9 +26,31 @@ public class MenuController {
 	@FXML
 	Button exitBtn;
 	
+	HttpClient httpClient;
+	
 	@FXML
 	public void initialize() {
 		FontSetter.setFontForElements(playBtn, optionsBtn, exitBtn);
+		this.httpClient = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://escape-the-island-game.herokuapp.com/current-game-version"))
+                .build();
+        try {
+			HttpResponse<String> response = httpClient.send(request,
+			        HttpResponse.BodyHandlers.ofString());
+			if(response.statusCode() == 200) {
+				String responseBody = (String) response.body();
+				if(!responseBody.equals(Main.currentGameVersion)) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("New version available");
+					alert.setHeaderText("New version available");
+					alert.setContentText("There is a new version of this game available on our website");
+					alert.showAndWait();
+				}
+			}
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void handleExit(MouseEvent event) {
