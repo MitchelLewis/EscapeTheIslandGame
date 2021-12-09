@@ -74,6 +74,9 @@ public class LevelControllerTest extends ApplicationTest {
     	Platform.runLater(
     	  () -> {
     	    	controller.nextRiddle(healthLabel);
+    	    	controller.nextRiddle(healthLabel);
+    	    	controller.nextRiddle(healthLabel);
+    	    	controller.nextRiddle(healthLabel);
     	    	final Label healthLabelAfterLevel = (Label) this.stage.getScene().lookup("#heartAmount");
     	    	assertEquals("4", healthLabelAfterLevel.getText());
     	    	assertTrue(AchievementController.level1Complete);
@@ -90,7 +93,7 @@ public class LevelControllerTest extends ApplicationTest {
        	// Avoid throwing IllegalStateException by running from a non-JavaFX thread.
     	Platform.runLater(
     	  () -> {
-    	    	for(int i = 0; i <= 8; i++) {
+    	    	for(int i = 0; i <= 20; i++) {
     	    		controller.nextRiddle(healthLabel);
     	    	}
     	    	assertTrue(this.stage.getScene().lookup("#gameWinImg").isVisible());

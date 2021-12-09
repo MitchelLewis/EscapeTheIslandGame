@@ -24,11 +24,12 @@ public class LevelController {
 	private Integer level;
 	private int riddleNumber;
 	private final int AMOUNT_OF_LEVELS = 4;
+	private final int AMOUNT_OF_RIDDLES = 5;
 	
 	public LevelController() throws FileNotFoundException, IOException {
 		this.level = null;
 		this.riddleNumber = 0;
-		this.storiesAndRiddles = new StoryRiddle[AMOUNT_OF_LEVELS][2];
+		this.storiesAndRiddles = new StoryRiddle[AMOUNT_OF_LEVELS][AMOUNT_OF_RIDDLES];
 		Deque<StoryRiddle> possibleStoriesAndRiddles = new ArrayDeque<>();
 		InputStream in = getClass().getResourceAsStream("/text/stories.csv"); 
 		List<Riddle> riddlesForLevel1 = readRiddlesFile("/text/level1Riddles.csv");
@@ -96,7 +97,7 @@ public class LevelController {
 		if(level == null) {
 			level = 0;
 		} else {
-			if(level + 1 == AMOUNT_OF_LEVELS && riddleNumber + 1 == 2) {
+			if(level + 1 == AMOUNT_OF_LEVELS && riddleNumber + 1 == 5) {
 				AchievementController.setLevelComplete(level);
 				Label score = (Label) healthLabel.getScene().lookup("#scoreValue");
 				Parent root;
@@ -114,7 +115,7 @@ public class LevelController {
 				}
 				
 
-			} else if(riddleNumber < 1) {
+			} else if(riddleNumber < 4) {
 				riddleNumber++;
 			} else {
 				riddleNumber = 0;
