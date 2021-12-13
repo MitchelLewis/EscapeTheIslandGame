@@ -13,7 +13,9 @@ import java.util.Random;
 
 import main.java.application.story.Riddle;
 import main.java.application.story.StoryRiddle;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXMLLoader;
 import java.lang.InterruptedException;
 
@@ -107,14 +109,14 @@ public class LevelController {
 					Label finalScoreLabel = (Label) root.lookup("#finalScoreLabel");
 					finalScoreLabel.setText("Score: " + score.getText());	
 					Main.currentScene.setRoot(root);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				} catch (Exception e) {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("A fatal error has occurred");
+					alert.setHeaderText("A fatal error has occurred");
+					alert.setContentText("We are unable to load the next part of the game. Try closing and restarting the game.");
+					alert.showAndWait();
 					e.printStackTrace();
 				}
-				
-
 			} else if(riddleNumber < 4) {
 				riddleNumber++;
 			} else {

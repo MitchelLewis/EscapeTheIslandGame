@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -33,7 +35,11 @@ public class Main extends Application {
 			primaryStage.show();
 			mp.play();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We are unable to load the game. Try closing and restarting the game.");
+			alert.showAndWait();
 			e.printStackTrace();
 		}
 	}

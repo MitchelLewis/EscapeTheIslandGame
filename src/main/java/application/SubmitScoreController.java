@@ -50,7 +50,11 @@ public class SubmitScoreController {
 		try {
 			sendScoreToWebsite(name, score, nameEntry.getScene());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We have been unable to submit your score to our website, please try again.");
+			alert.showAndWait();
 			e.printStackTrace();
 		}
 	}

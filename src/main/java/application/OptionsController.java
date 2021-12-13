@@ -5,9 +5,11 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 
@@ -70,8 +72,12 @@ public class OptionsController {
 		try {
 			root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 			Main.currentScene.setRoot(root);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We are unable to load the menu. Try closing and restarting the game.");
+			alert.showAndWait();
 			e.printStackTrace();
 		
 		}
