@@ -22,7 +22,7 @@
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../assets/img/menu_bg.jpg" />
+            <Image url="@../../../assets/img/options_bg.jpg" />
          </image>
       </ImageView>
       <GridPane layoutX="14.0" layoutY="16.0" prefHeight="1052.0" prefWidth="1894.0">

@@ -19,9 +19,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameWinController">
    <children>
+      <ImageView fitHeight="1092.0" fitWidth="1938.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/img/game_win_bg.jpg" />
+         </image>
+      </ImageView>
       <VBox alignment="TOP_CENTER" layoutX="445.0" layoutY="40.0">
          <children>
-            <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" prefHeight="71.0" prefWidth="601.0" text="Achievements Unlocked" textFill="WHITE">
+            <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" prefHeight="71.0" prefWidth="601.0" text="Achievements Unlocked">
                <font>
                   <Font size="49.0" />
                </font>
@@ -87,19 +92,14 @@
                </children></HBox>
          </children>
       </VBox>
-      <ImageView fx:id="gameWinImg" fitHeight="471.0" fitWidth="710.0" layoutX="649.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/img/game_win.jpg" />
-         </image>
-      </ImageView>
       <VBox alignment="BOTTOM_CENTER" layoutX="628.0" layoutY="731.0" prefHeight="189.0" prefWidth="667.0">
          <children>
-            <Label fx:id="gameWinText" text="To be continued..." textFill="WHITE" wrapText="true">
+            <Label fx:id="gameWinText" text="To be continued..." wrapText="true">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="finalScoreLabel" text="Score:" textFill="WHITE">
+            <Label fx:id="finalScoreLabel" text="Score:">
                <font>
                   <Font name="System Bold" size="56.0" />
                </font>
