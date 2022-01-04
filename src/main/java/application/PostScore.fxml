@@ -17,9 +17,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.SubmitScoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.SubmitScoreController">
    <children>
-      <VBox alignment="CENTER" layoutY="6.0" prefHeight="1080.0" prefWidth="1920.0">
+      <VBox alignment="CENTER" layoutY="6.0" prefHeight="768.0" prefWidth="1366.0">
          <children>
             <HBox alignment="CENTER" prefHeight="38.0" prefWidth="438.0">
                <children>
@@ -66,7 +66,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="97.0" prefWidth="276.0" text="Submit" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 276px 97px;">
+            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="97.0" prefWidth="276.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 276px 97px;" text="Submit">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>

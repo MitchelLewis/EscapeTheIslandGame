@@ -29,7 +29,7 @@ public class GameWinController {
 	
 	@FXML
 	public void initialize() {
-		FontSetter.setFontForElements(achievementsUnlockedLabel, finalScoreLabel, exitBtn, postScoreBtn, gameWinText, tryAgainBtn);
+		FontSetter.setFontForElements(exitBtn, postScoreBtn, gameWinText, tryAgainBtn);
 	}
 		
 	

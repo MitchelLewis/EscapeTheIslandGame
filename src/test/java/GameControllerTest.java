@@ -31,7 +31,7 @@ public class GameControllerTest extends ApplicationTest {
     	Parent root = FXMLLoader.load(
                 getClass().getResource("../../main/java/application/Game.fxml"));
         this.stage = stage;
-        Scene scene = new Scene(root, 1920, 1080);
+        Scene scene = new Scene(root, 1366, 768);
         Main.currentScene = scene;
         Main.primaryStage = stage;
         stage.setScene(scene);

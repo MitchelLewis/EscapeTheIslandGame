@@ -17,9 +17,9 @@ public class FontSetterTest {
 		Label lbl3 = new Label();
 
 		FontSetter.setFontForElements(lbl1, lbl2, lbl3);
-		assertTrue(lbl1.getStyle().equals(" -fx-font-size: 20pt;"));
-		assertTrue(lbl2.getStyle().equals(" -fx-font-size: 20pt;"));
-		assertTrue(lbl3.getStyle().equals(" -fx-font-size: 20pt;"));
+		assertTrue(lbl1.getStyle().equals(" -fx-font-size: 16pt;"));
+		assertTrue(lbl2.getStyle().equals(" -fx-font-size: 16pt;"));
+		assertTrue(lbl3.getStyle().equals(" -fx-font-size: 16pt;"));
 	}
 
 }

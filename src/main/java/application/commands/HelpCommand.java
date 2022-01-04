@@ -10,12 +10,12 @@ public class HelpCommand implements Command {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Help menu");
 		alert.setHeaderText("Help menu");
-		alert.setContentText("Here are the commands that will help you use and navigate the game:" + "\r\n"
-				+ "help - shows the help menu\r\n"
-				+ "quit - quits the game\r\n"
-				+ "answer \"your answer here\" - submits your answer for the riddle\r\n"
-				+ "next - continue through the game (where applicable)\r\n"
-				+ "hint - provides a useful hint to solving the riddle");
+		alert.setContentText("Here is what each button does:" + "\r\n"
+				+ "Next - shows the next part of the game\r\n"
+				+ "Hint - provides a useful hint to solving the riddle\r\n"
+				+ "Answer - shows the answer text box\r\n"
+				+ "Submit - submits the answer\r\n"
+				+ "Exit - quits the game\r\n");
 		alert.showAndWait();
 	}
 }

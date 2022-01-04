@@ -34,7 +34,7 @@ public class LevelControllerTest extends ApplicationTest {
     	FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("../../main/java/application/Game.fxml"));
         this.stage = stage;
-        Scene scene = new Scene(loader.load(), 1920, 1080);
+        Scene scene = new Scene(loader.load(), 1366, 768);
         controller = ((GameController) loader.getController()).getLevelController();
         Main.currentScene = scene;
         Main.primaryStage = stage;

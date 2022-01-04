@@ -19,7 +19,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameWinController">
    <children>
-      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true" id="gameWinImg">
          <image>
             <Image url="@../../../assets/img/game_win_bg.jpg" />
          </image>
@@ -28,7 +28,7 @@
          <children>
             <Label fx:id="achievementsUnlockedLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="71.0" prefWidth="601.0" text="Achievements Unlocked">
                <font>
-                  <Font size="49.0" />
+                  <Font name="System Bold" size="49.0" />
                </font>
             </Label>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: transparent;">
