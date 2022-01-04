@@ -3,11 +3,12 @@
 This is a Java application built on the JavaFX framework
 
 ## Prerequisites
-Java 11
-JavaFX (tested on JavaFX 11)
+- Java 11
+- JavaFX (tested on JavaFX 11)
+- Maven
 
 ## Running
-The entry-point for this application is Main.java
-Some arguments must be passed to the JVM to run:
+To start the game, run: `mvn clean compile javafx:run`
 
-    --module-path "<path to JavaFX>" --add-modules javafx.controls,javafx.fxml,javafx.media
+## Testing
+To test the game, run: `mvn clean test`

@@ -1,3 +1,4 @@
+//Externally sourced: https://gist.github.com/andytill/3835914
 package test.java;
 import java.util.concurrent.CountDownLatch;
 
