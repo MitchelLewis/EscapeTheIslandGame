@@ -78,7 +78,7 @@
                         <Image url="@../../../assets/img/scroll-png-10.png" />
                      </image>
                   </ImageView>
-                  <TextArea fx:id="outputText" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="868.0" style="" styleClass="text-area" wrapText="true">
+                  <TextArea fx:id="outputText" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="843.0" style="" styleClass="text-area" wrapText="true">
                      <font>
                         <Font size="25.0" />
                      </font>

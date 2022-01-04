@@ -35,7 +35,7 @@ public class AnswerCommand implements Command {
 	@Override
 	public void handleCommand(TextArea gameOutput, String answer) {
 		StoryRiddle currentRiddle = levelController.getRiddle();
-		if (currentRiddle.getRiddleElement().getAnswer().equalsIgnoreCase(answer)) {
+		if (currentRiddle.getRiddleElement().getAnswers().contains(answer.toLowerCase())) {
 			AchievementController.amountOfRiddlesAnsweredInARow++;
 			if(AchievementController.amountOfRiddlesAnsweredInARow == 3) {
 				AchievementController.amountOfRiddlesAnsweredInARow = 0;
@@ -47,11 +47,15 @@ public class AnswerCommand implements Command {
 			nextButton.setDisable(false);
 			scoreController.incrementScore(currentRiddle, gameOutput);
 		} else {
-			if (currentRiddle.getRiddleElement().getAnswer().contains(answer)) {
-				AchievementController.noRiddlesWrong = false;
-				AchievementController.amountOfRiddlesAnsweredInARow = 0;
-				gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
+			for(String possibleAnswer: currentRiddle.getRiddleElement().getAnswers()) {
+				if (possibleAnswer.contains(answer)) {
+					AchievementController.noRiddlesWrong = false;
+					AchievementController.amountOfRiddlesAnsweredInARow = 0;
+					gameOutput.appendText("\nA rumble occurs but nothing else happens!\n");
+					break;
+				}
 			}
+
 			Label healthAmountLbl = (Label) gameOutput.getScene().lookup("#heartAmount");
 			int healthAmount = Integer.parseInt(healthAmountLbl.getText());
 			if(healthAmount <= 1) {

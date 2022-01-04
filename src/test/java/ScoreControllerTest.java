@@ -20,6 +20,8 @@ import javafx.fxml.*;
 import org.testfx.framework.junit.ApplicationTest;
 import java.io.IOException;
 import java.lang.InterruptedException;
+import java.util.Arrays;
+
 import javafx.application.Platform;
 
 public class ScoreControllerTest extends ApplicationTest {
@@ -41,7 +43,7 @@ public class ScoreControllerTest extends ApplicationTest {
     @Test
     public void incrementScoreNoUsedHintTest() {
     	ScoreController controller = new ScoreController();
-    	StoryRiddle riddleNoUsedHint = new StoryRiddle("story1", new Riddle("riddle", "answer", "hint"));
+    	StoryRiddle riddleNoUsedHint = new StoryRiddle("story1", new Riddle("riddle", Arrays.asList("answer"), "hint"));
     	TextArea outputText = (TextArea) this.stage.getScene().lookup("#outputText");
     	// Avoid throwing IllegalStateException by running from a non-JavaFX thread.
     	Platform.runLater(
@@ -56,7 +58,7 @@ public class ScoreControllerTest extends ApplicationTest {
     @Test
     public void incrementScoreHintUsedTest() {
     	ScoreController controller = new ScoreController();
-    	StoryRiddle riddleUsedHint = new StoryRiddle("story1", new Riddle("riddle", "answer", "hint"));
+    	StoryRiddle riddleUsedHint = new StoryRiddle("story1", new Riddle("riddle", Arrays.asList("answer"), "hint"));
     	riddleUsedHint.setUsedHint(true);
     	TextArea outputText = (TextArea) this.stage.getScene().lookup("#outputText"); 
     	// Avoid throwing IllegalStateException by running from a non-JavaFX thread.

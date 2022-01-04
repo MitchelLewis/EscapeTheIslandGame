@@ -1,16 +1,18 @@
 //Created by Lewis/Harry
 package main.java.application.story;
 
+import java.util.List;
+
 public class Riddle {
 	private String riddleElement;
-	private String answer;
+	private List<String> answers;
 	private String hint;
 	private Boolean hasAnsweredCorrectly;
 	private Boolean usedHint;
 	
-	public Riddle(String riddle, String answer, String hint) {
+	public Riddle(String riddle, List<String> answers, String hint) {
 		this.riddleElement = riddle;
-		this.answer = answer;
+		this.answers = answers;
 		this.hint = hint;
 		this.hasAnsweredCorrectly = false;
 		this.usedHint = false;
@@ -20,8 +22,8 @@ public class Riddle {
 		return riddleElement;
 	}
 
-	public String getAnswer() {
-		return answer;
+	public List<String> getAnswers() {
+		return answers;
 	}
 
 	public String getHint() {

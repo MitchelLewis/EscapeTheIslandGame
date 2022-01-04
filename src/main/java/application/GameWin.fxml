@@ -19,7 +19,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameWinController">
    <children>
-      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true" id="gameWinImg">
+      <ImageView id="gameWinImg" fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/img/game_win_bg.jpg" />
          </image>
@@ -92,11 +92,11 @@
                </children></HBox>
          </children>
       </VBox>
-      <VBox alignment="BOTTOM_CENTER" layoutX="351.0" layoutY="488.0" prefHeight="189.0" prefWidth="667.0">
+      <VBox alignment="BOTTOM_CENTER" layoutX="123.0" layoutY="502.0" prefHeight="252.0" prefWidth="1123.0">
          <children>
-            <Label fx:id="gameWinText" text="To be continued..." wrapText="true">
+            <Label fx:id="gameWinText" prefHeight="124.0" prefWidth="1123.0" style="-fx-background-size: cover; -fx-background-color: rgba(145, 145, 145, 0.75);" text="You step through the portal looking back one last time at Pimbo, he waves as you disappear and find yourself mysteriously back at your home with your family." textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="22.0" />
+                  <Font size="30.0" />
                </font>
             </Label>
             <Label fx:id="finalScoreLabel" text="Score:">
@@ -104,23 +104,26 @@
                   <Font name="System Bold" size="56.0" />
                </font>
             </Label>
+            <HBox alignment="CENTER" prefHeight="95.0" prefWidth="1063.0">
+               <children>
+                  <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="65.0" prefWidth="344.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 344px 95px;" text="Post score">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Try again">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Exit">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" layoutX="153.0" layoutY="663.0" prefHeight="95.0" prefWidth="1063.0">
-         <children>
-            <Button fx:id="postScoreBtn" mnemonicParsing="false" onMouseClicked="#handleSubmitScore" prefHeight="65.0" prefWidth="344.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 344px 95px;" text="Post score">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-            <Button fx:id="tryAgainBtn" mnemonicParsing="false" onMouseClicked="#handlePlay" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Try again">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-            <Button fx:id="exitBtn" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="65.0" prefWidth="220.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 220px 95px;" text="Exit">
-               <font>
-                  <Font size="27.0" />
-               </font></Button>
-         </children>
-      </HBox>
    </children>
 </AnchorPane>

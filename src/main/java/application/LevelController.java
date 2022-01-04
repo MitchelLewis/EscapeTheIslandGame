@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.List;
 import java.util.Random;
@@ -70,7 +71,14 @@ public class LevelController {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(riddlesFile))) {
 			while((line = br.readLine()) != null) {
 				String[] lineAsArray = line.split("@");
-				riddles.add(new Riddle(lineAsArray[0], lineAsArray[1], lineAsArray[2]));
+				List<String> answers = Arrays.asList(lineAsArray[1].split(","));
+				if(answers.size() == 0) {
+					answers = Arrays.asList(lineAsArray[1]);
+				}
+				for(int i = 0; i < answers.size(); i++) {
+					answers.set(i, answers.get(i).toLowerCase());
+				}
+				riddles.add(new Riddle(lineAsArray[0], answers, lineAsArray[2]));
 			}
 		}
 		return riddles;
