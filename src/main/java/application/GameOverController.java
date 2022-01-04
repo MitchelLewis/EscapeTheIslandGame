@@ -34,7 +34,8 @@ public class GameOverController {
 		try {
 			root = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			Main.currentScene.setRoot(root);
-			Main.primaryStage.setFullScreen(true);
+			Main.primaryStage.setFullScreen(false);
+			Main.primaryStage.setResizable(false);
 			Main.currentScene.getStylesheets().add("main/java/application/application.css");
 		} catch (IOException e) {
 			e.printStackTrace();

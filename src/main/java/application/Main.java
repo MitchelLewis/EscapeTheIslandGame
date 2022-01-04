@@ -18,7 +18,7 @@ public class Main extends Application {
 	public static MediaPlayer mp;
 	public static Boolean isSkipAllowed = false;
 	public static Scene currentScene = null;
-	public static int textSize = 20;
+	public static int textSize = 16;
 	public static String currentGameVersion = "1.0.0";
 	@Override
 	public void start(Stage primaryStage){
@@ -27,11 +27,12 @@ public class Main extends Application {
 			mp = new MediaPlayer(gameMusic);
 			Main.primaryStage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-			currentScene = new Scene(root, 1024, 768);
+			currentScene = new Scene(root, 1366, 768);
 			primaryStage.setScene(currentScene);
 			primaryStage.setTitle("Escape the Island");
 			primaryStage.getIcons().add(new Image("/assets/img/game_icon.png"));
-			primaryStage.setFullScreen(true);
+			primaryStage.setFullScreen(false);
+			primaryStage.setResizable(false);
 			primaryStage.show();
 			mp.play();
 		} catch (IOException e) {

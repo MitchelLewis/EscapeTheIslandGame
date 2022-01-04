@@ -56,8 +56,9 @@ public class GameWinController {
 		try {
 			Stage stage = new Stage();
 			root = FXMLLoader.load(getClass().getResource("PostScore.fxml"));
-			stage.setScene(new Scene(root, 1024, 768));
-			stage.setFullScreen(true);
+			stage.setScene(new Scene(root, 1366, 768));
+			stage.setFullScreen(false);
+			stage.setResizable(false);
 			stage.setTitle("Escape the Island");
 			stage.getIcons().add(new Image("/assets/img/game_icon.png"));
 			Label scoreLabel = (Label) root.lookup("#scoreValueLabel");

@@ -135,7 +135,8 @@ public class LevelController {
 			Parent root;
 			root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
 			Main.currentScene.setRoot(root);
-			Main.primaryStage.setFullScreen(true);
+			Main.primaryStage.setFullScreen(false);
+			Main.primaryStage.setResizable(false);
 			return root;
 		} catch (IOException e) {
 			e.printStackTrace();

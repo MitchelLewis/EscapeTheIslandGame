@@ -4,7 +4,8 @@
   <artifactId>EscapeTheIslandGame</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
-    <someproperty>allow-skip</someproperty>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
   <build>
     <resources>

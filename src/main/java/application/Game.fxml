@@ -9,18 +9,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1076.0" prefWidth="1915.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.GameController">
    <children>
-      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
+      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true">
          <image>
             <Image url="@../../../assets/img/game_bg.jpg" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="1391.0" layoutY="739.0" prefHeight="291.0" prefWidth="498.0" style=": ; -fx-border-width: ;">
+      <VBox alignment="CENTER" layoutX="1082.0" layoutY="529.0" prefHeight="227.0" prefWidth="266.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <StackPane prefHeight="128.0" prefWidth="208.0">
+                  <StackPane prefHeight="122.0" prefWidth="120.0">
                      <children>
                         <ImageView fitHeight="111.0" fitWidth="121.0" preserveRatio="true">
                            <image>
@@ -34,7 +34,7 @@
                         </Label>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                  <StackPane prefHeight="122.0" prefWidth="68.0">
                      <children>
                         <ImageView fitHeight="122.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -69,16 +69,16 @@
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="BOTTOM_CENTER" layoutX="259.0" layoutY="226.0" prefHeight="458.0" prefWidth="1257.0">
+      <VBox alignment="BOTTOM_CENTER" layoutX="97.0" layoutY="74.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="429.0" prefWidth="1152.0">
          <children>
-            <StackPane prefHeight="467.0" prefWidth="1257.0" VBox.vgrow="NEVER">
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="429.0" prefWidth="1154.0" VBox.vgrow="NEVER">
                <children>
-                  <ImageView fitHeight="510.0" fitWidth="1396.0" pickOnBounds="true">
+                  <ImageView fitHeight="412.0" fitWidth="1152.0" pickOnBounds="true">
                      <image>
                         <Image url="@../../../assets/img/scroll-png-10.png" />
                      </image>
                   </ImageView>
-                  <TextArea fx:id="outputText" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="867.0" style="" styleClass="text-area" wrapText="true">
+                  <TextArea fx:id="outputText" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="868.0" style="" styleClass="text-area" wrapText="true">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -90,16 +90,16 @@
             </StackPane>
          </children>
       </VBox>
-      <HBox fx:id="answerSection" alignment="CENTER" layoutX="628.0" layoutY="740.0" prefHeight="78.0" prefWidth="668.0" visible="false">
+      <HBox fx:id="answerSection" alignment="CENTER" layoutX="355.0" layoutY="503.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="598.0" visible="false">
          <children>
-            <TextField fx:id="inputText">
+            <TextField fx:id="inputText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="43.0" prefWidth="249.0">
                <font>
                   <Font size="28.0" />
                </font>
             </TextField>
-            <Button fx:id="submtAnswerButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleSubmitAnswer" prefHeight="102.0" prefWidth="266.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Submit">
+            <Button fx:id="submtAnswerButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleSubmitAnswer" prefHeight="73.0" prefWidth="249.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 249px 73px;" text="Submit">
                <font>
-                  <Font name="System Bold" size="48.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
                <opaqueInsets>
                   <Insets />
@@ -110,19 +110,19 @@
             </Button>
          </children>
       </HBox>
-      <HBox layoutX="586.0" layoutY="850.0" prefHeight="102.0" prefWidth="756.0">
+      <HBox layoutX="345.0" layoutY="602.0" prefHeight="75.0" prefWidth="618.0">
          <children>
-            <Button fx:id="hintCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleHint" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Hint">
+            <Button fx:id="hintCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleHint" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 289px 75px;" text="Hint">
                <font>
-                  <Font name="System Bold" size="48.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="answerCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleAnswer" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 350px 102px;" text="Answer">
+            <Button fx:id="answerCommandButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onMouseClicked="#handleAnswer" prefHeight="102.0" prefWidth="350.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 289px 75px;" text="Answer">
                <font>
-                  <Font name="System Bold" size="48.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
                <opaqueInsets>
                   <Insets />
@@ -133,15 +133,15 @@
             </Button>
          </children>
       </HBox>
-      <Button fx:id="nextCommandButton" alignment="CENTER" contentDisplay="CENTER" layoutX="811.0" layoutY="970.0" mnemonicParsing="false" onMouseClicked="#handleNext" prefHeight="102.0" prefWidth="295.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 295px 102px;" text="Next">
+      <Button fx:id="nextCommandButton" alignment="CENTER" contentDisplay="CENTER" layoutX="529.0" layoutY="687.0" mnemonicParsing="false" onMouseClicked="#handleNext" prefHeight="75.0" prefWidth="249.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 249px 75px;" text="Next">
          <font>
-            <Font name="System Bold" size="48.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button fx:id="helpCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="1756.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="129.0" prefWidth="128.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 129px 128px;">
+      <Button fx:id="helpCommand" alignment="CENTER" contentDisplay="CENTER" layoutX="1251.0" mnemonicParsing="false" onMouseClicked="#showHelp" prefHeight="101.0" prefWidth="104.0" style="-fx-background-image: url('http://clipart-library.com/new_gallery/14-146016_free-download-question-mark-cartoon-transparent.png'); -fx-background-color: transparent; -fx-background-size: 104px 101px;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -149,9 +149,9 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="970.0" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="102.0" prefWidth="295.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-size: cover; -fx-background-color: transparent; -fx-background-size: 295px 102px;" text="Exit">
+      <Button fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="680.0" mnemonicParsing="false" onMouseClicked="#handleExit" prefHeight="75.0" prefWidth="201.0" style="-fx-background-image: url('https://www.freeiconspng.com/uploads/scroll-png-10.png'); -fx-background-color: transparent; -fx-background-size: cover; -fx-background-size: 201px 75px;" text="Exit">
          <font>
-            <Font name="System Bold" size="48.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
          <opaqueInsets>
             <Insets />

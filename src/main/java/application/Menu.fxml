@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.MenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.MenuController">
    <children>
-      <ImageView fitHeight="1080" fitWidth="1920" pickOnBounds="true" StackPane.alignment="CENTER">
+      <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" StackPane.alignment="CENTER">
          <image>
             <Image url="@../../../assets/img/menu_bg.jpg" />
          </image>
