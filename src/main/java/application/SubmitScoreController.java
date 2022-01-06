@@ -1,7 +1,5 @@
-//Created by Lewis/Harry
 package main.java.application;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpClient.Version;
@@ -23,6 +21,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * Controller to handling submitting the score to the website
+ * 
+ * @author Lewis
+ *
+ */
 public class SubmitScoreController {
 	@FXML
 	Label scoreKeyLabel;
@@ -39,12 +43,21 @@ public class SubmitScoreController {
 	
 	private HttpClient httpClient;
 	
+	/**
+	 * Initialises the font for all the elements in the scene and creates a new HttpClient
+	 * 
+	 */
 	@FXML
 	public void initialize() {
 		FontSetter.setFontForElements(scoreKeyLabel, scoreValueLabel, nameEntry, postScoreBtn, nameLabel, postScoreDescriptionLabel);
 		this.httpClient = HttpClient.newBuilder().version(Version.HTTP_1_1).build();
 	}
 	
+	/**
+	 * Handles submitting the score to the website by first retrieving the players name and score.
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleSubmitScore(MouseEvent event) {
 		String name = nameEntry.getText();
 		String score = scoreValueLabel.getText();
@@ -60,6 +73,18 @@ public class SubmitScoreController {
 		}
 	}
 	
+	/**
+	 * Sends the score to the website by first creating a HTTP request body and building a POST request.
+	 * It then sends the body and request to the website which synchronously handles the request and serves
+	 * a response.
+	 * In the case of a HTTP 200 OK response, the player is informed that the score has been submitted
+	 * successfully, otherwise an error pop-up dialog is shown
+	 * 
+	 * @param name The players name
+	 * @param score The players score
+	 * @param scene The current scene
+	 * @throws JsonProcessingException When the JSON request body can not be processed
+	 */
 	private void sendScoreToWebsite(String name, String score, Scene scene) throws JsonProcessingException {
 	    Map<String, String> body = new HashMap<>();
 	    body.put("name", name);
@@ -80,7 +105,7 @@ public class SubmitScoreController {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Score posted");
 				alert.setHeaderText("Score posted");
-				alert.setContentText("We successfully posted your score to our website!\n View your score: https://escape-the-island-game.herokuapp.com/scores");
+				alert.setContentText("We successfully posted your score to our website!\nView your score: https://escape-the-island-game.herokuapp.com/scores");
 				alert.showAndWait();
 				Stage stage = (Stage) scene.getWindow();
 				stage.close();
@@ -91,7 +116,7 @@ public class SubmitScoreController {
 				alert.setContentText("Ooops, there was an error trying to post your score, please try again!");
 				alert.showAndWait();
 			}
-		} catch (IOException | InterruptedException e) {
+		} catch (Exception e) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Failed to submit score");
 			alert.setHeaderText("Failed to submit score");

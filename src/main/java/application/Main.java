@@ -1,8 +1,5 @@
-//Created by Lewis/Harry
 package main.java.application;
 	
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -14,6 +11,13 @@ import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+/**
+ * The main entry-point of the game, called by the Launcher class and contains
+ * common attributes used throughout the game.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class Main extends Application {
 	public static Stage primaryStage;
 	public static MediaPlayer mp;
@@ -21,6 +25,11 @@ public class Main extends Application {
 	public static Scene currentScene = null;
 	public static int textSize = 16;
 	public static String currentGameVersion = "1.0.0";
+	
+	/**
+	 * Starts the game, loads the music and menu and sets the size, title and game icon.
+	 * 
+	 */
 	@Override
 	public void start(Stage primaryStage){
 		try {
@@ -36,7 +45,7 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			primaryStage.show();
 			mp.play();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("A fatal error has occurred");
 			alert.setHeaderText("A fatal error has occurred");
@@ -46,6 +55,10 @@ public class Main extends Application {
 		}
 	}
 	
+	/**
+	 * Defines if skipping riddles is allowed (debug only) and launches the game.
+	 * @param args Any relevant arguments called when launching the game
+	 */
 	public static void main(String[] args) {
 		isSkipAllowed = true;
 		launch(args);

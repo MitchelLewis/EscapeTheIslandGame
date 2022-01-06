@@ -1,4 +1,3 @@
-//Created by Lewis/Harry
 package main.java.application;
 
 import javafx.scene.Parent;
@@ -6,6 +5,13 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 
+/**
+ * This controller will track the users achievements throughout the game via
+ * static attributes that are set throughout the game.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class AchievementController {
 	public static int amountOfRiddlesAnsweredInARow = 0;
 	public static boolean chainedRiddles = false;
@@ -16,6 +22,11 @@ public class AchievementController {
 	public static boolean level3Complete = false;
 	public static boolean level4Complete = false;
 	
+	/**
+	 * Sets which level has been completed. Otherwise it throws an IllegalArgumentException.
+	 * 
+	 * @param level Level number (zero-indexed)
+	 */
 	public static void setLevelComplete(int level) {
 		switch(level) {
 			case 0: 
@@ -34,6 +45,13 @@ public class AchievementController {
 		}
 	}
 	
+	/**
+	 * This is used on the game win and game over screen and sets the achievements
+	 * visibility accordingly, if an achievement has been unlocked then the image
+	 * relating to that achievement is made fully visible and a tooltip is installed for context.
+	 * 
+	 * @param root The game window itself
+	 */
 	public static void setAchievementsUnlocked(Parent root) {
 		ImageView level1Achievement = (ImageView) root.lookup("#level1Achievement");
         Tooltip t = new Tooltip("Level 1 complete");
@@ -81,6 +99,10 @@ public class AchievementController {
 		}
 	}
 	
+	/**
+	 * Resets the state of all achievements, primarily used when trying again.
+	 * 
+	 */
 	public static void resetAchievements() {
 		chainedRiddles = false;
 		noRiddlesWrong = true;

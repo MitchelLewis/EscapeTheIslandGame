@@ -23,6 +23,14 @@ import java.lang.InterruptedException;
 
 import javafx.scene.Parent;
 
+/**
+ * A controller that deals with the construction of the 4 levels of the game,
+ * it reads all the stories and riddles and compiles them in random order ready
+ * to be called.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class LevelController {
 	private StoryRiddle[][] storiesAndRiddles;
 	private Integer level;
@@ -30,6 +38,13 @@ public class LevelController {
 	private final int AMOUNT_OF_LEVELS = 4;
 	private final int AMOUNT_OF_RIDDLES = 5;
 	
+	/**
+	 * Reads all the stories and creates the StoryRiddle classes and then adds
+	 * the Riddle's later. 
+	 * 
+	 * @throws FileNotFoundException If any of the dependent asset files can not be found
+	 * @throws IOException If there is some permissions/general I/O issue
+	 */
 	public LevelController() throws FileNotFoundException, IOException {
 		this.level = null;
 		this.riddleNumber = 0;
@@ -64,6 +79,16 @@ public class LevelController {
 		}
 	}
 	
+	/**
+	 * Takes the name of the file name where the riddles are stored and
+	 * compiles a list of Riddle's, if a Riddle has multiple answers, it is stored
+	 * as an n-size answer list, otherwise if the Riddle only has one answer it is stored
+	 * as a list with one element
+	 * 
+	 * @param fileName File name where the riddles can be found.
+	 * @return A list of Riddle's to be attached to each Story
+	 * @throws IOException If there is an issue accessing the file provided
+	 */
 	private List<Riddle> readRiddlesFile(String fileName) throws IOException {
 		InputStream riddlesFile = getClass().getResourceAsStream(fileName);
 		List<Riddle> riddles = new ArrayList<>();
@@ -84,6 +109,14 @@ public class LevelController {
 		return riddles;
 	}
 	
+	/**
+	 * Given all riddles, this method selects a random Riddle from the list 
+	 * and adds the Riddle to the StoryRiddle, removing the Riddle from the
+	 * candidate list when its used.
+	 *  
+	 * @param riddles List of all Riddle candidates
+	 * @param story StoryRiddle to assign the Riddle to
+	 */
 	private void setRiddleForStory(List<Riddle> riddles, StoryRiddle story) {
 		Random rand = new Random();
 		Riddle riddleToSet = riddles.get(rand.nextInt(riddles.size()));
@@ -91,19 +124,37 @@ public class LevelController {
 		riddles.remove(riddleToSet);
 	}
 
-	
+	/**
+	 * Gets the current level
+	 * @return the integer value of the current level
+	 */
 	public Integer getLevel() {
 		return this.level;
 	}
 	
+	/**
+	 * Gets the riddle number
+	 * @return the integer value of the current riddle
+	 */
 	public int getRiddleNumber() {
 		return this.riddleNumber;
 	}
 	
+	/**
+	 * Gets the current StoryRiddle
+	 * @return the current StoryRiddle
+	 */
 	public StoryRiddle getRiddle() {
 		return this.storiesAndRiddles[level][riddleNumber];
 	}
 	
+	/**
+	 * Gets the next Riddle in the sequence to load. If the player has
+	 * completed the game, then the game win scene is loaded and achievements/score set.
+	 * If not, the game continues to the next riddle/level.
+	 * 
+	 * @param healthLabel A Node used to query other Node's in the scene
+	 */
 	public void nextRiddle(Label healthLabel) {
 		if(level == null) {
 			level = 0;
@@ -138,7 +189,11 @@ public class LevelController {
 		}
 	}
 	
-	
+	/**
+	 * Shows the game over screen
+	 * 
+	 * @return the Parent element that contains all Node's in the scene.
+	 */
 	public Parent showGameOver() {
 		try {
 			Parent root;
@@ -149,6 +204,11 @@ public class LevelController {
 			return root;
 		} catch (IOException e) {
 			e.printStackTrace();
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("Try closing and restarting the game.");
+			alert.showAndWait();
 			return null;
 		}
 

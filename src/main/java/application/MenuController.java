@@ -1,7 +1,4 @@
-//Created by Lewis/Harry
 package main.java.application;
-
-import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +15,13 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import javafx.stage.Stage;
 
-
+/**
+ * Controller to handle interaction and initialisation of the game menu, also checks
+ * if the game has an available update at runtime.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class MenuController {
 	@FXML
 	Button playBtn;
@@ -29,6 +32,12 @@ public class MenuController {
 	
 	HttpClient httpClient;
 	
+	/**
+	 * Initialises the font of all elements in the scene and calls the website for the latest
+	 * version of the game, if the game is outdated then a pop-up dialog is shown informing the
+	 * user of an update for the game (no error handling as its not a critical error)
+	 * 
+	 */
 	@FXML
 	public void initialize() {
 		FontSetter.setFontForElements(playBtn, optionsBtn, exitBtn);
@@ -49,16 +58,27 @@ public class MenuController {
 					alert.showAndWait();
 				}
 			}
-		} catch (IOException | InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
+	/**
+	 * Handles closing the game
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleExit(MouseEvent event) {
 	    Stage stage = (Stage) exitBtn.getScene().getWindow();
 	    stage.close();
 	}
 	
+	/**
+	 * Handles when the player wishes to play the game, it resets the achievements
+	 * and loads the main Game scene.
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handlePlay(MouseEvent event) {
 		AchievementController.resetAchievements();
 		Parent root;
@@ -68,21 +88,36 @@ public class MenuController {
 			Main.primaryStage.setFullScreen(false);
 			Main.primaryStage.setResizable(false);
 			Main.currentScene.getStylesheets().add("main/java/application/application.css");
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We are unable to load the game. Try closing and restarting the game.");
+			alert.showAndWait();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();
 			stage.close();
 		}
 		
 	}
 	
+	/**
+	 * Handles when the player wishes to change the options and loads the Options scene.
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleOptions(MouseEvent event){
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Options.fxml"));
 			Main.currentScene.setRoot(root);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We are unable to load the options screen. Try closing and restarting the game.");
+			alert.showAndWait();
 			Stage stage = (Stage) exitBtn.getScene().getWindow();
 			stage.close();		
 		}

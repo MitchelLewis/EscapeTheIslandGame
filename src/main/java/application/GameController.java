@@ -1,20 +1,25 @@
-//Created by Lewis/Harry
 package main.java.application;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import main.java.application.commands.CommandController;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
 import javafx.stage.Stage;
 
+/**
+ * A controller that deals with the main game, handling all I/O on the main game screen.
+ * Also sets the game up initially by reading the riddles and stories.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class GameController {
 	@FXML
 	TextArea outputText;
@@ -39,18 +44,25 @@ public class GameController {
 	private LevelController levelController;
 	private CommandController commandController;
 	
+	/**
+	 * Initialises all the nodes font sizes and sets the controller up initially to be able to
+	 * handle commands and create all the necessary levels.
+	 * Called when the scene changes to this.
+	 * 
+	 */
 	@FXML
 	public void initialize() {
 		FontSetter.setFontForElements(outputText, inputText, nextCommandButton, answerCommandButton, hintCommandButton, exitButton, answerSection, submtAnswerButton);
 		try {
 			levelController = new LevelController();
 			commandController = new CommandController(levelController, Main.isSkipAllowed);
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-			Stage stage = (Stage) outputText.getScene().getWindow();
-			stage.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("A fatal error has occurred");
+			alert.setHeaderText("A fatal error has occurred");
+			alert.setContentText("We are unable to load the game. Try closing and restarting the game.");
+			alert.showAndWait();
 			Stage stage = (Stage) outputText.getScene().getWindow();
 			stage.close();
 		}
@@ -83,15 +95,28 @@ public class GameController {
 		
 	}
 	
+	/**
+	 * Shows the help pop-up window via the CommandController class.
+	 * 
+	 */
 	public void showHelp() {
 		CommandController.COMMANDS.get("help").handleCommand(outputText, null);
 	}
 	
+	/**
+	 * Handles the closing of the game window
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleExit(MouseEvent event) {
 	    Stage stage = (Stage) exitButton.getScene().getWindow();
 	    stage.close();
 	}
 	
+	/**
+	 * Handles progressing the game to the next story/riddle.
+	 * It resets the GUI back to a state where it can accept a new hint/answer.
+	 */
 	public void handleNext() {
 		commandController.handleCommand("next", null, outputText);
 		nextCommandButton.setDisable(true);
@@ -100,11 +125,19 @@ public class GameController {
 		answerSection.setVisible(false);
 	}
 	
+	/**
+	 * Handles progressing the game to the next story/riddle.
+	 * It resets the GUI back to a state where it can accept a new hint/answer.
+	 */
 	public void handleHint() {
 		commandController.handleCommand("hint", null, outputText);
 		hintCommandButton.setDisable(true);
 	}
 
+	/**
+	 * Handles updating the GUI to accept the players answer to the riddle.
+	 * 
+	 */
 	public void handleAnswer() {
 		answerCommandButton.setDisable(true);
 		answerSection.setVisible(true);
@@ -119,6 +152,11 @@ public class GameController {
 		}
 	}
 	
+	/**
+	 * Returns an instance of the level controller primarily used in tests.
+	 * 
+	 * @return An instance of the LevelController
+	 */
 	public LevelController getLevelController() {
 		return this.levelController;
 	}

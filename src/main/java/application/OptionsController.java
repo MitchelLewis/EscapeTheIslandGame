@@ -1,7 +1,4 @@
-//Created by Lewis/Harry
 package main.java.application;
-
-import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +10,12 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
-
+/**
+ * Controller that sets the users preferences.
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class OptionsController {
 	@FXML
 	Button muteBtn;
@@ -35,6 +37,11 @@ public class OptionsController {
 	
 	boolean isMuted;
 	
+	/**
+	 * Initialises the font size of all elements and sets the previous options selected, using
+	 * default values if not.
+	 * 
+	 */
 	@FXML
 	public void initialize()
 	{
@@ -44,6 +51,10 @@ public class OptionsController {
 		isMuted = Main.mp.isMute();
 	}
 	
+	/**
+	 * Handles the muting/unmuting of the game music
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleMute(MouseEvent event){
 		if(isMuted)
 		{
@@ -58,16 +69,30 @@ public class OptionsController {
 		}
 	}
 	
+	/**
+	 * Handles the muting/unmuting of the game music
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleVolume(MouseEvent event) {
 		Main.mp.setVolume(volumeSlider.getValue()/100);
 
 	}
 	
+	/**
+	 * Handles changing the text size and sets it permanently
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleTextSize(MouseEvent event) {
 		FontSetter.setFontForElements(muteBtn, backBtn, volumeLbl, textLbl);
 		Main.textSize = (int) textSizeSlider.getValue();
 	}
 	
+	/**
+	 * Handles the player wanting to go back to the menu
+	 * 
+	 * @param event Mouse event that would be used to decide logic but is not used in this context.
+	 */
 	public void handleBack(MouseEvent event) {
 		Parent root;
 		try {
