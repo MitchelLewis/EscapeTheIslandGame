@@ -8,14 +8,29 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * When user ask for a hint it will get the hint from the currentLevel and output the hint to the gameOutput area
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class HintCommand implements Command {
 
 	private LevelController levelController;
-
+	
 	public HintCommand(LevelController lvlController) {
 		this.levelController = lvlController;
 	}
-
+	
+	/**
+	 * When hint command is used first get the current levels riddle hint.
+	 * If the command has already been used for this level then an alert will be presented
+	 * if not check if they have any hints left and display an alert if they have no hints remaining
+	 * if they have hints remaining then it will be appended to game output and the hintAmountLbl will be updated
+	 * 
+	 * @param gameOutput used to append the hint of the riddle to the game output also used to update the hint label value
+	 * @param input not used by this command
+	 */
 	@Override
 	public void handleCommand(TextArea gameOutput, String input) {
 		String hintText = levelController.getRiddle().getRiddleElement().getHint();

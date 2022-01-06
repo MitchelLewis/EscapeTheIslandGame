@@ -5,7 +5,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * When a player uses the help command it will create an alert message to the player
+ * @author Lewis/Harry
+ *
+ */
 public class HelpCommand implements Command {
+	/**
+	 * Creates an Alert object which will display with the header, title and message stated in the method
+	 * 
+	 * @param gameOutput not used by this command
+	 * @param input not used by this command
+	 */
 	@Override
 	public void handleCommand(TextArea gameOutput, String input) {
 		Alert alert = new Alert(AlertType.INFORMATION);

@@ -16,12 +16,22 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-
+/**
+ * Handles when the user gives an answer in game
+ * 
+ * 
+ * @author Lewis/Harry
+ *
+ */
 public class AnswerCommand implements Command {
 	private LevelController levelController;
 	private List<String> healthDepletionResponses;
 	private ScoreController scoreController;
-
+	
+	/**
+	 * Constructor for AnswerCommand
+	 * @param levelController used to get the current level the player is on
+	 */
 	public AnswerCommand(LevelController levelController) {
 		this.levelController = levelController;
 		this.scoreController = new ScoreController();
@@ -31,7 +41,17 @@ public class AnswerCommand implements Command {
 		this.healthDepletionResponses.add("You step on a plank and it hits you in the face.");
 		this.healthDepletionResponses.add("You think too hard and you get a migraine.");
 	}
-
+	
+	/**
+	 * Handles what happens when the user gives a correct incorrect or close answer.
+	 * 
+	 * if correct then text is appended the next button is enabled and the score is increased.
+	 * If incorrect decreases health value and output a healthDepletionResponse message, if 0 health will show gameover screen.
+	 * Also checks for achievements of chained riddles and no riddles wrong
+	 * 
+	 * @param gameOutput the output area is updated if the answer is incorrect,correct or close also used to find other elements on the page
+	 * @param answer the answer given by the player
+	 */
 	@Override
 	public void handleCommand(TextArea gameOutput, String answer) {
 		StoryRiddle currentRiddle = levelController.getRiddle();
