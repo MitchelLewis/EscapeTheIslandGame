@@ -61,6 +61,8 @@ public class AnswerCommand implements Command {
 				AchievementController.amountOfRiddlesAnsweredInARow = 0;
 				AchievementController.chainedRiddles = true;
 			}
+			Button hintButton = (Button) gameOutput.getScene().lookup("#hintCommandButton");
+			hintButton.setDisable(true);
 			gameOutput.appendText("\nSomething seems to be happening.\nClick 'next' to continue...");
 			currentRiddle.setHasAnsweredCorrectly(true);
 			Button nextButton = (Button) gameOutput.getScene().lookup("#nextCommandButton");
